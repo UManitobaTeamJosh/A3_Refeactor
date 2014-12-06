@@ -73,6 +73,9 @@ namespace A3Proj {
          */
         public bool genreMatch(ICollection<string> genreCollection) {
             bool output = false;
+            if (genreCollection.Count == 0) {
+                return true;
+            }
             foreach (string genreQuery in genreCollection) {
                 foreach (string genre in genreList) {
                     if (genre.Equals(genreQuery)) {

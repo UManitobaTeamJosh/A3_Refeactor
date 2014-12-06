@@ -34,6 +34,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pageSelectionBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.fillLabel0 = new System.Windows.Forms.Label();
+            this.button_shortlistRemoveSel = new System.Windows.Forms.Button();
             this.searchTextBoxDirector = new System.Windows.Forms.TextBox();
             this.label_DirectorField = new System.Windows.Forms.Label();
             this.textBox_ActorQuery = new System.Windows.Forms.RichTextBox();
@@ -153,9 +155,9 @@
             this.labelPageOutOf.AutoSize = true;
             this.labelPageOutOf.Location = new System.Drawing.Point(102, 13);
             this.labelPageOutOf.Name = "labelPageOutOf";
-            this.labelPageOutOf.Size = new System.Drawing.Size(34, 13);
+            this.labelPageOutOf.Size = new System.Drawing.Size(43, 13);
             this.labelPageOutOf.TabIndex = 5;
-            this.labelPageOutOf.Text = "out of";
+            this.labelPageOutOf.Text = "out of 0";
             // 
             // label10
             // 
@@ -179,6 +181,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.fillLabel0);
+            this.panel1.Controls.Add(this.button_shortlistRemoveSel);
             this.panel1.Controls.Add(this.searchTextBoxDirector);
             this.panel1.Controls.Add(this.label_DirectorField);
             this.panel1.Controls.Add(this.textBox_ActorQuery);
@@ -205,9 +209,29 @@
             this.panel1.Size = new System.Drawing.Size(174, 632);
             this.panel1.TabIndex = 4;
             // 
+            // fillLabel0
+            // 
+            this.fillLabel0.AutoSize = true;
+            this.fillLabel0.Location = new System.Drawing.Point(1, 437);
+            this.fillLabel0.Name = "fillLabel0";
+            this.fillLabel0.Size = new System.Drawing.Size(169, 13);
+            this.fillLabel0.TabIndex = 29;
+            this.fillLabel0.Text = "___________________________";
+            // 
+            // button_shortlistRemoveSel
+            // 
+            this.button_shortlistRemoveSel.Enabled = false;
+            this.button_shortlistRemoveSel.Location = new System.Drawing.Point(82, 456);
+            this.button_shortlistRemoveSel.Name = "button_shortlistRemoveSel";
+            this.button_shortlistRemoveSel.Size = new System.Drawing.Size(75, 23);
+            this.button_shortlistRemoveSel.TabIndex = 28;
+            this.button_shortlistRemoveSel.Text = "Remove Selected";
+            this.button_shortlistRemoveSel.UseVisualStyleBackColor = true;
+            this.button_shortlistRemoveSel.Click += new System.EventHandler(this.button_shortlistRemoveSel_Click);
+            // 
             // searchTextBoxDirector
             // 
-            this.searchTextBoxDirector.Location = new System.Drawing.Point(11, 336);
+            this.searchTextBoxDirector.Location = new System.Drawing.Point(11, 332);
             this.searchTextBoxDirector.Name = "searchTextBoxDirector";
             this.searchTextBoxDirector.Size = new System.Drawing.Size(153, 20);
             this.searchTextBoxDirector.TabIndex = 27;
@@ -216,7 +240,7 @@
             // 
             this.label_DirectorField.AutoSize = true;
             this.label_DirectorField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DirectorField.Location = new System.Drawing.Point(9, 313);
+            this.label_DirectorField.Location = new System.Drawing.Point(9, 309);
             this.label_DirectorField.Name = "label_DirectorField";
             this.label_DirectorField.Size = new System.Drawing.Size(63, 16);
             this.label_DirectorField.TabIndex = 26;
@@ -224,7 +248,7 @@
             // 
             // textBox_ActorQuery
             // 
-            this.textBox_ActorQuery.Location = new System.Drawing.Point(12, 384);
+            this.textBox_ActorQuery.Location = new System.Drawing.Point(12, 370);
             this.textBox_ActorQuery.Name = "textBox_ActorQuery";
             this.textBox_ActorQuery.Size = new System.Drawing.Size(145, 76);
             this.textBox_ActorQuery.TabIndex = 25;
@@ -336,7 +360,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 463);
+            this.label7.Location = new System.Drawing.Point(10, 459);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 17;
@@ -346,10 +370,11 @@
             // 
             this.listBox_shortlist.AllowDrop = true;
             this.listBox_shortlist.FormattingEnabled = true;
-            this.listBox_shortlist.Location = new System.Drawing.Point(13, 482);
+            this.listBox_shortlist.Location = new System.Drawing.Point(15, 483);
             this.listBox_shortlist.Name = "listBox_shortlist";
             this.listBox_shortlist.Size = new System.Drawing.Size(144, 95);
             this.listBox_shortlist.TabIndex = 16;
+            this.listBox_shortlist.SelectedIndexChanged += new System.EventHandler(this.shortlist_selIndChange);
             this.listBox_shortlist.DragDrop += new System.Windows.Forms.DragEventHandler(this.shortlist_dragDrop);
             this.listBox_shortlist.DragEnter += new System.Windows.Forms.DragEventHandler(this.shortlist_dragEnter);
             // 
@@ -357,7 +382,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 368);
+            this.label6.Location = new System.Drawing.Point(8, 354);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 10;
@@ -493,6 +518,8 @@
         private System.Windows.Forms.RichTextBox textBox_ActorQuery;
         private System.Windows.Forms.TextBox searchTextBoxDirector;
         private System.Windows.Forms.Label label_DirectorField;
+        private System.Windows.Forms.Button button_shortlistRemoveSel;
+        private System.Windows.Forms.Label fillLabel0;
 
 
     }

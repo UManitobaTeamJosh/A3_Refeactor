@@ -24,6 +24,7 @@ namespace A3Proj.TabPanels{
 
         public MovieTabPanel(MovieData mData) :this() {
             movieData = mData;
+            performSearch();
         }
 
         /*
@@ -185,6 +186,19 @@ namespace A3Proj.TabPanels{
         private void shortlist_dragDrop(object sender, DragEventArgs e) {
             String newTitle = e.Data.GetData(DataFormats.StringFormat).ToString();
             pushToShortlist(newTitle);
+        }
+
+        private void button_shortlistRemoveSel_Click(object sender, EventArgs e) {
+            int selIndex = listBox_shortlist.SelectedIndex;
+            if (selIndex > -1) {
+                listBox_shortlist.Items.RemoveAt(selIndex);
+                shortList.RemoveAt(selIndex);
+            }
+            button_shortlistRemoveSel.Enabled = false;
+        }
+
+        private void shortlist_selIndChange(object sender, EventArgs e) {
+            button_shortlistRemoveSel.Enabled = true;
         }
 
         

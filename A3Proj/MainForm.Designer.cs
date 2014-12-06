@@ -48,7 +48,7 @@
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(758, 591);
+            this.tabControlMain.Size = new System.Drawing.Size(827, 642);
             this.tabControlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMain.TabIndex = 0;
             // 
@@ -58,7 +58,7 @@
             this.tabHome.Location = new System.Drawing.Point(4, 29);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(750, 558);
+            this.tabHome.Size = new System.Drawing.Size(819, 609);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             // 
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 591);
+            this.ClientSize = new System.Drawing.Size(827, 642);
             this.Controls.Add(this.tabControlMain);
             this.Name = "MainForm";
             this.Text = "MainForm";

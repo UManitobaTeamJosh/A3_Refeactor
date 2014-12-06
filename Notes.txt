@@ -1,0 +1,8 @@
+Visual Inheritance
+    "Adding a friend" and "Store infro on if and when you see a movie" 
+    should be inherited.
+    
+    
+Things to Include
+    A chart of task testing as on Slide 16 of the last web notes.
+    The chart shows the performance data for each participant in the test.

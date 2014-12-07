@@ -94,6 +94,7 @@
             this.button_editName.Size = new System.Drawing.Size(79, 31);
             this.button_editName.TabIndex = 4;
             this.button_editName.Text = "Edit Name";
+            this.toolTip1.SetToolTip(this.button_editName, "Edit friend\'s name");
             this.button_editName.UseVisualStyleBackColor = true;
             this.button_editName.Click += new System.EventHandler(this.button_editName_Click);
             // 
@@ -153,6 +154,7 @@
             this.genreCheckedList.ScrollAlwaysVisible = true;
             this.genreCheckedList.Size = new System.Drawing.Size(398, 217);
             this.genreCheckedList.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.genreCheckedList, "Check off this friend\'s favorite genres.");
             // 
             // label_FavGenre
             // 
@@ -173,6 +175,7 @@
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 7;
             this.button_cancel.Text = "Cancel";
+            this.toolTip1.SetToolTip(this.button_cancel, "Discard changes.");
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
@@ -184,6 +187,7 @@
             this.button_Save.Size = new System.Drawing.Size(75, 23);
             this.button_Save.TabIndex = 8;
             this.button_Save.Text = "Save Friend";
+            this.toolTip1.SetToolTip(this.button_Save, "Save changes");
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
@@ -194,6 +198,7 @@
             this.button_setImage.Size = new System.Drawing.Size(98, 26);
             this.button_setImage.TabIndex = 9;
             this.button_setImage.Text = "Set Image";
+            this.toolTip1.SetToolTip(this.button_setImage, "Choose an image for the friend.");
             this.button_setImage.UseVisualStyleBackColor = true;
             this.button_setImage.Click += new System.EventHandler(this.button_setImage_Click);
             // 
@@ -204,6 +209,7 @@
             this.button_clear.Size = new System.Drawing.Size(73, 26);
             this.button_clear.TabIndex = 10;
             this.button_clear.Text = "Clear Image";
+            this.toolTip1.SetToolTip(this.button_clear, "Remove this friend\'s image.");
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
@@ -271,6 +277,7 @@
             this.button_addMovie.Size = new System.Drawing.Size(75, 26);
             this.button_addMovie.TabIndex = 15;
             this.button_addMovie.Text = "Add Movie";
+            this.toolTip1.SetToolTip(this.button_addMovie, "Add movie to Recommended Movies");
             this.button_addMovie.UseVisualStyleBackColor = true;
             this.button_addMovie.Click += new System.EventHandler(this.button_addMovie_Click);
             // 

@@ -72,6 +72,7 @@
             this.button_AddShortlist.Size = new System.Drawing.Size(157, 23);
             this.button_AddShortlist.TabIndex = 3;
             this.button_AddShortlist.Text = "Add to Shortlist";
+            this.toolTip1.SetToolTip(this.button_AddShortlist, "Add this movie to your shortlist");
             this.button_AddShortlist.UseVisualStyleBackColor = true;
             this.button_AddShortlist.Click += new System.EventHandler(this.button_AddShortlist_Click);
             // 
@@ -135,6 +136,7 @@
             this.button_Cancel.Size = new System.Drawing.Size(75, 23);
             this.button_Cancel.TabIndex = 8;
             this.button_Cancel.Text = "Cancel";
+            this.toolTip1.SetToolTip(this.button_Cancel, "Discard changes");
             this.button_Cancel.UseVisualStyleBackColor = true;
             this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
@@ -146,6 +148,7 @@
             this.button_Save.Size = new System.Drawing.Size(75, 23);
             this.button_Save.TabIndex = 9;
             this.button_Save.Text = "Save";
+            this.toolTip1.SetToolTip(this.button_Save, "Save changes");
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
@@ -238,6 +241,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(24, 23);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Select a date");
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MoviePosterPictureBox

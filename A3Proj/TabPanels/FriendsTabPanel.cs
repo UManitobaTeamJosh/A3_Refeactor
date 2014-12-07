@@ -179,6 +179,7 @@ namespace A3Proj.TabPanels {
                 foreach (var p in items) {
                     IEnumerable<XElement> elementItems = p.Descendants();
                     String name = null;
+                    String imagePath = null;
                     List<String> genreList = new List<String>();
                     foreach (var p2 in elementItems) {
                         String elementName = p2.Name.ToString();
@@ -186,9 +187,12 @@ namespace A3Proj.TabPanels {
                             name = p2.Value;
                         } else if (elementName.Equals("genre")) {
                             genreList.Add(p2.Value);
+                        } else if (elementName.Equals("imagePath")) {
+                            imagePath = p2.Value;
                         }
                     }//foreach inner
                     Friend newFriend = new Friend(name,genreList);
+                    newFriend.imageFilePath = imagePath;
                     tempFriendList.Add(newFriend);
                 }//foreach outer
                 friendList = tempFriendList;
@@ -205,6 +209,7 @@ namespace A3Proj.TabPanels {
             foreach (Friend friend in friendList) {
                 XElement root = new XElement("friend");
                 root.Add(new XElement("name",friend.name));
+                root.Add(new XElement("imagePath", friend.imageFilePath));
                 foreach (String genre in friend.favoriteGenres) {
                     root.Add(new XElement("genre",genre));
                 }

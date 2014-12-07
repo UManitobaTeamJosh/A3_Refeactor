@@ -29,10 +29,12 @@
             this.button_editName = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.genreCheckedList = new System.Windows.Forms.CheckedListBox();
             this.label_FavGenre = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
             this.button_Save = new System.Windows.Forms.Button();
-            this.genreCheckedList = new System.Windows.Forms.CheckedListBox();
+            this.button_setImage = new System.Windows.Forms.Button();
+            this.button_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,39 +100,6 @@
             this.panel1.Size = new System.Drawing.Size(377, 223);
             this.panel1.TabIndex = 6;
             // 
-            // label_FavGenre
-            // 
-            this.label_FavGenre.AutoSize = true;
-            this.label_FavGenre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_FavGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_FavGenre.Location = new System.Drawing.Point(0, 0);
-            this.label_FavGenre.Name = "label_FavGenre";
-            this.label_FavGenre.Size = new System.Drawing.Size(97, 13);
-            this.label_FavGenre.TabIndex = 8;
-            this.label_FavGenre.Text = "Favorite Genres";
-            // 
-            // button_cancel
-            // 
-            this.button_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_cancel.Location = new System.Drawing.Point(514, 392);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_cancel.TabIndex = 7;
-            this.button_cancel.Text = "Cancel";
-            this.button_cancel.UseVisualStyleBackColor = true;
-            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
-            // 
-            // button_Save
-            // 
-            this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Save.Location = new System.Drawing.Point(433, 392);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(75, 23);
-            this.button_Save.TabIndex = 8;
-            this.button_Save.Text = "Save Friend";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
-            // 
             // genreCheckedList
             // 
             this.genreCheckedList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -167,11 +136,66 @@
             this.genreCheckedList.Size = new System.Drawing.Size(375, 208);
             this.genreCheckedList.TabIndex = 25;
             // 
+            // label_FavGenre
+            // 
+            this.label_FavGenre.AutoSize = true;
+            this.label_FavGenre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label_FavGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FavGenre.Location = new System.Drawing.Point(0, 0);
+            this.label_FavGenre.Name = "label_FavGenre";
+            this.label_FavGenre.Size = new System.Drawing.Size(97, 13);
+            this.label_FavGenre.TabIndex = 8;
+            this.label_FavGenre.Text = "Favorite Genres";
+            // 
+            // button_cancel
+            // 
+            this.button_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_cancel.Location = new System.Drawing.Point(514, 392);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(75, 23);
+            this.button_cancel.TabIndex = 7;
+            this.button_cancel.Text = "Cancel";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
+            // 
+            // button_Save
+            // 
+            this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Save.Location = new System.Drawing.Point(433, 392);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(75, 23);
+            this.button_Save.TabIndex = 8;
+            this.button_Save.Text = "Save Friend";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+            // 
+            // button_setImage
+            // 
+            this.button_setImage.Location = new System.Drawing.Point(12, 284);
+            this.button_setImage.Name = "button_setImage";
+            this.button_setImage.Size = new System.Drawing.Size(98, 26);
+            this.button_setImage.TabIndex = 9;
+            this.button_setImage.Text = "Set Image";
+            this.button_setImage.UseVisualStyleBackColor = true;
+            this.button_setImage.Click += new System.EventHandler(this.button_setImage_Click);
+            // 
+            // button_clear
+            // 
+            this.button_clear.Location = new System.Drawing.Point(116, 284);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(73, 26);
+            this.button_clear.TabIndex = 10;
+            this.button_clear.Text = "Clear Image";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            // 
             // FriendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 427);
+            this.Controls.Add(this.button_clear);
+            this.Controls.Add(this.button_setImage);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.textBox_Name);
@@ -203,5 +227,7 @@
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.CheckedListBox genreCheckedList;
+        private System.Windows.Forms.Button button_setImage;
+        private System.Windows.Forms.Button button_clear;
     }
 }

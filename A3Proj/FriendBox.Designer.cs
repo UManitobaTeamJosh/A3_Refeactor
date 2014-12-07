@@ -24,31 +24,30 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FriendBox));
-            this.movieImage = new System.Windows.Forms.PictureBox();
+            this.friendImage = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip_FriendBox = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToPartyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_Name = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.movieImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendImage)).BeginInit();
             this.contextMenuStrip_FriendBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // movieImage
+            // friendImage
             // 
-            this.movieImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.movieImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("movieImage.BackgroundImage")));
-            this.movieImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.movieImage.ContextMenuStrip = this.contextMenuStrip_FriendBox;
-            this.movieImage.Location = new System.Drawing.Point(3, 2);
-            this.movieImage.Margin = new System.Windows.Forms.Padding(2);
-            this.movieImage.Name = "movieImage";
-            this.movieImage.Size = new System.Drawing.Size(137, 161);
-            this.movieImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.movieImage.TabIndex = 2;
-            this.movieImage.TabStop = false;
-            this.movieImage.Click += new System.EventHandler(this.click);
+            this.friendImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.friendImage.BackgroundImage = global::A3Proj.Properties.Resources.placeholder_movie;
+            this.friendImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.friendImage.ContextMenuStrip = this.contextMenuStrip_FriendBox;
+            this.friendImage.Location = new System.Drawing.Point(3, 2);
+            this.friendImage.Margin = new System.Windows.Forms.Padding(2);
+            this.friendImage.Name = "friendImage";
+            this.friendImage.Size = new System.Drawing.Size(137, 161);
+            this.friendImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.friendImage.TabIndex = 2;
+            this.friendImage.TabStop = false;
+            this.friendImage.Click += new System.EventHandler(this.click);
             // 
             // contextMenuStrip_FriendBox
             // 
@@ -98,11 +97,11 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ContextMenuStrip = this.contextMenuStrip_FriendBox;
             this.Controls.Add(this.label_Name);
-            this.Controls.Add(this.movieImage);
+            this.Controls.Add(this.friendImage);
             this.Name = "FriendBox";
             this.Size = new System.Drawing.Size(146, 189);
             this.Click += new System.EventHandler(this.click);
-            ((System.ComponentModel.ISupportInitialize)(this.movieImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendImage)).EndInit();
             this.contextMenuStrip_FriendBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,7 +110,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox movieImage;
+        private System.Windows.Forms.PictureBox friendImage;
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_FriendBox;
         private System.Windows.Forms.ToolStripMenuItem addToPartyToolStripMenuItem;

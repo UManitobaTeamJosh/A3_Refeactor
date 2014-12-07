@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieBox));
             this.labelMovieTitle = new System.Windows.Forms.Label();
             this.labelMovieYear = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -84,7 +83,7 @@
             // movieImage
             // 
             this.movieImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.movieImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("movieImage.BackgroundImage")));
+            this.movieImage.BackgroundImage = global::A3Proj.Properties.Resources.placeholder_movie;
             this.movieImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.movieImage.Location = new System.Drawing.Point(2, 2);
             this.movieImage.Margin = new System.Windows.Forms.Padding(2);

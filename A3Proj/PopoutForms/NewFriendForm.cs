@@ -15,6 +15,7 @@ namespace A3Proj.PopoutForms {
         Friend friend;
         private String name;
         private bool edit;
+        private String imageFilePath;
 
         /*
          *  Instantiating NewFriendForm with only a FriendsTabLabel sets up the
@@ -37,6 +38,7 @@ namespace A3Proj.PopoutForms {
             edit = true;
             this.friend = friend;
             this.Text = "Edit Friend";
+            this.imageFilePath = friend.imageFilePath;
             label_Name.Text = friend.name;
             label_Name.Font = new Font(label_Name.Font.Name, label_Name.Font.Size, FontStyle.Regular);
             this.name = friend.name;
@@ -45,6 +47,15 @@ namespace A3Proj.PopoutForms {
                 if (friend.favoriteGenres.Contains(genreCheckedList.Items[i])) {
                     genreCheckedList.SetItemChecked(i,true);
                 }
+            }
+            //Load image
+            try {
+                String imageFilePath = friend.imageFilePath;
+                if(System.IO.File.Exists(imageFilePath)){
+                    pictureBox1.BackgroundImage = new Bitmap(friend.imageFilePath);
+                }
+            } catch (Exception e) {
+                
             }
         }
 
@@ -125,6 +136,7 @@ namespace A3Proj.PopoutForms {
             Friend friend = null;
             if (!String.IsNullOrWhiteSpace(name)) {
                 friend = new Friend(name,generateFavoriteGenres());
+                friend.imageFilePath = imageFilePath;
             } else {
                 Console.WriteLine("friend gen fail - name invalid");
             }
@@ -141,6 +153,7 @@ namespace A3Proj.PopoutForms {
             } else {
                 friend.name = name;
                 friend.favoriteGenres = generateFavoriteGenres();
+                friend.imageFilePath = imageFilePath;
                 parent.editFriendData(friend, friend.index);
             }
             this.Close();
@@ -148,6 +161,23 @@ namespace A3Proj.PopoutForms {
 
         private void leave_textBoxName(object sender, EventArgs e) {
             leaveTextBoxName();
+        }
+
+        private void button_setImage_Click(object sender, EventArgs e) {
+            using (OpenFileDialog oFD = new OpenFileDialog()) {
+                oFD.Title = "Select Image";
+                oFD.Filter = "Image Files (*.png) | *.png;*.jpg;*.jpeg;*.bmp";
+                if (oFD.ShowDialog() == DialogResult.OK) {
+                    pictureBox1.BackgroundImage = new Bitmap(oFD.FileName);
+                    //Console.WriteLine(oFD.FileName);
+                    imageFilePath = oFD.FileName;
+                }
+            }
+        }
+
+        private void button_clear_Click(object sender, EventArgs e) {
+            imageFilePath = "";
+            pictureBox1.BackgroundImage = Properties.Resources.placeholder_movie;
         }
 
 

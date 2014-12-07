@@ -10,6 +10,7 @@ namespace A3Proj {
         public String name;
         public List<String> favoriteGenres;
         public int index;
+        public String imageFilePath;
 
         public Friend(String name) {
             this.name = name;

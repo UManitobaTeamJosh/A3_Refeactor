@@ -82,6 +82,7 @@
             this.listBox_ReccGenres.Name = "listBox_ReccGenres";
             this.listBox_ReccGenres.Size = new System.Drawing.Size(150, 147);
             this.listBox_ReccGenres.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.listBox_ReccGenres, "Genres recommended based on your party.");
             // 
             // label_reccGenres
             // 
@@ -101,13 +102,14 @@
             this.listBox_party.Name = "listBox_party";
             this.listBox_party.Size = new System.Drawing.Size(150, 173);
             this.listBox_party.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.listBox_party, "Left click to select, then right click to remove a friend from the party");
             // 
             // contextMenuStrip_party
             // 
             this.contextMenuStrip_party.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeFromPartyToolStripMenuItem});
             this.contextMenuStrip_party.Name = "contextMenuStrip_party";
-            this.contextMenuStrip_party.Size = new System.Drawing.Size(223, 48);
+            this.contextMenuStrip_party.Size = new System.Drawing.Size(223, 26);
             // 
             // removeFromPartyToolStripMenuItem
             // 
@@ -156,6 +158,7 @@
             this.button_addFriend.Size = new System.Drawing.Size(42, 41);
             this.button_addFriend.TabIndex = 0;
             this.button_addFriend.Text = "+";
+            this.toolTip1.SetToolTip(this.button_addFriend, "Add a new friend.");
             this.button_addFriend.UseVisualStyleBackColor = true;
             this.button_addFriend.Click += new System.EventHandler(this.button_addFriend_Click);
             // 

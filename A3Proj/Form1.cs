@@ -11,9 +11,7 @@ using System.Xml.Linq;
 using System.Xml;
 
 /*
- *  TODO Movie info form.
- *  TODO MovieBox contextmenustrip events (corresponding to MovieInfoForm)
- *  
+ *  Old code, from before the refactor. Kept for reference.
  */
 namespace A3Proj {
     public partial class Form1 : Form {

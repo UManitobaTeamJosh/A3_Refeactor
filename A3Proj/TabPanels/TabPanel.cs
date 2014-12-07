@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace A3Proj.TabPanels {
     /*
      *  Parent class for all tab panels.
+     *  Currently used to allow child forms to inherit a tooltip.
      *  
-     *  Presently only used to store common color data.
+     *  Could hold colors that the child forms can reference (having a common sidebar color...etc)
      *  (Color spelt with American spelling since the object is spelt that way...)
      */
     public partial class TabPanel : UserControl {

@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabMovies = new System.Windows.Forms.TabPage();
             this.tabLists = new System.Windows.Forms.TabPage();
             this.tabFriends = new System.Windows.Forms.TabPage();
@@ -32,9 +33,14 @@
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.movieTabPanel1 = new A3Proj.TabPanels.MovieTabPanel(movieData);
             this.friendsTabPanel1 = new A3Proj.TabPanels.FriendsTabPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
+            this.tabHome.SuspendLayout();
             this.tabMovies.SuspendLayout();
             this.tabFriends.SuspendLayout();
+            this.tabHistory.SuspendLayout();
+            this.tabSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -56,13 +62,24 @@
             // 
             // tabHome
             // 
-            this.tabHome.BackColor = System.Drawing.Color.Transparent;
+            this.tabHome.BackColor = System.Drawing.Color.White;
+            this.tabHome.Controls.Add(this.label1);
             this.tabHome.Location = new System.Drawing.Point(4, 29);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
             this.tabHome.Size = new System.Drawing.Size(819, 609);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(361, 284);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Not in Prototype";
             // 
             // tabMovies
             // 
@@ -97,6 +114,8 @@
             // 
             // tabHistory
             // 
+            this.tabHistory.Controls.Add(this.label2);
+            this.tabHistory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabHistory.Location = new System.Drawing.Point(4, 29);
             this.tabHistory.Name = "tabHistory";
             this.tabHistory.Size = new System.Drawing.Size(819, 609);
@@ -106,6 +125,7 @@
             // 
             // tabSettings
             // 
+            this.tabSettings.Controls.Add(this.label3);
             this.tabSettings.Location = new System.Drawing.Point(4, 29);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Size = new System.Drawing.Size(819, 609);
@@ -130,6 +150,25 @@
             this.friendsTabPanel1.Size = new System.Drawing.Size(819, 609);
             this.friendsTabPanel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(361, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Not in Prototype";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(361, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Not in Prototype";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,8 +179,14 @@
             this.Text = "MainForm";
             this.Resize += new System.EventHandler(this.resize);
             this.tabControlMain.ResumeLayout(false);
+            this.tabHome.ResumeLayout(false);
+            this.tabHome.PerformLayout();
             this.tabMovies.ResumeLayout(false);
             this.tabFriends.ResumeLayout(false);
+            this.tabHistory.ResumeLayout(false);
+            this.tabHistory.PerformLayout();
+            this.tabSettings.ResumeLayout(false);
+            this.tabSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -157,5 +202,8 @@
         private System.Windows.Forms.TabPage tabSettings;
         private TabPanels.MovieTabPanel movieTabPanel1;
         private TabPanels.FriendsTabPanel friendsTabPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

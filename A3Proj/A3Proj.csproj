@@ -159,6 +159,9 @@
     <EmbeddedResource Include="TabPanels\MovieTabPanel.resx">
       <DependentUpon>MovieTabPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TabPanels\TabPanel.resx">
+      <DependentUpon>TabPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

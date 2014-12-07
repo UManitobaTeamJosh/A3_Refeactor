@@ -130,6 +130,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.comboBox1, "Choose what ratings to display.");
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label11
@@ -162,6 +163,7 @@
             this.navButtonNext.Size = new System.Drawing.Size(34, 23);
             this.navButtonNext.TabIndex = 6;
             this.navButtonNext.Text = ">";
+            this.toolTip1.SetToolTip(this.navButtonNext, "Go to the next page");
             this.navButtonNext.UseVisualStyleBackColor = true;
             this.navButtonNext.Click += new System.EventHandler(this.navButtonNext_Click);
             // 
@@ -173,6 +175,7 @@
             this.navButtonPrev.Size = new System.Drawing.Size(34, 23);
             this.navButtonPrev.TabIndex = 2;
             this.navButtonPrev.Text = "<";
+            this.toolTip1.SetToolTip(this.navButtonPrev, "Go to the previous page");
             this.navButtonPrev.UseVisualStyleBackColor = true;
             this.navButtonPrev.Click += new System.EventHandler(this.navButtonPrev_Click);
             // 
@@ -201,6 +204,7 @@
             this.pageSelectionBox.Size = new System.Drawing.Size(44, 20);
             this.pageSelectionBox.TabIndex = 4;
             this.pageSelectionBox.Text = "1";
+            this.toolTip1.SetToolTip(this.pageSelectionBox, "Enter a number here to go to that page");
             this.pageSelectionBox.TextChanged += new System.EventHandler(this.pageSelectionBox_TextChanged);
             this.pageSelectionBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pageSelectionBox_KeyPress);
             // 
@@ -261,6 +265,8 @@
             this.searchTextBoxDirector.Name = "searchTextBoxDirector";
             this.searchTextBoxDirector.Size = new System.Drawing.Size(153, 20);
             this.searchTextBoxDirector.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.searchTextBoxDirector, "Specify the movie\'s director. Leave blank if you don\'t want to search for a direc" +
+        "tor.");
             // 
             // label_DirectorField
             // 
@@ -279,6 +285,8 @@
             this.textBox_ActorQuery.Size = new System.Drawing.Size(145, 76);
             this.textBox_ActorQuery.TabIndex = 25;
             this.textBox_ActorQuery.Text = "";
+            this.toolTip1.SetToolTip(this.textBox_ActorQuery, "Specify what actors are in the movie. Leave blank if you don\'t want to filter by " +
+        "actors.");
             // 
             // genreCheckedList
             // 
@@ -314,6 +322,7 @@
             this.genreCheckedList.ScrollAlwaysVisible = true;
             this.genreCheckedList.Size = new System.Drawing.Size(145, 94);
             this.genreCheckedList.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.genreCheckedList, "Check off genres you would like to appear");
             // 
             // buttonSearch
             // 
@@ -354,6 +363,7 @@
             this.lengthToControl.Name = "lengthToControl";
             this.lengthToControl.Size = new System.Drawing.Size(64, 20);
             this.lengthToControl.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.lengthToControl, "Movies longer than this will not appear in the search");
             this.lengthToControl.Value = new decimal(new int[] {
             9999,
             0,
@@ -371,6 +381,7 @@
             this.lengthFromControl.Name = "lengthFromControl";
             this.lengthFromControl.Size = new System.Drawing.Size(64, 20);
             this.lengthFromControl.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.lengthFromControl, "Movies shorter than this will not appear in the search");
             // 
             // label4
             // 
@@ -400,6 +411,7 @@
             this.listBox_shortlist.Name = "listBox_shortlist";
             this.listBox_shortlist.Size = new System.Drawing.Size(144, 95);
             this.listBox_shortlist.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.listBox_shortlist, "Drag and drop movies into this box. ");
             this.listBox_shortlist.SelectedIndexChanged += new System.EventHandler(this.shortlist_selIndChange);
             this.listBox_shortlist.DragDrop += new System.Windows.Forms.DragEventHandler(this.shortlist_dragDrop);
             this.listBox_shortlist.DragEnter += new System.Windows.Forms.DragEventHandler(this.shortlist_dragEnter);
@@ -463,6 +475,7 @@
             this.releaseToControl.Name = "releaseToControl";
             this.releaseToControl.Size = new System.Drawing.Size(64, 20);
             this.releaseToControl.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.releaseToControl, "Movies released after this year will not appear in the search.");
             this.releaseToControl.Value = new decimal(new int[] {
             2014,
             0,
@@ -480,6 +493,7 @@
             this.releaseFromControl.Name = "releaseFromControl";
             this.releaseFromControl.Size = new System.Drawing.Size(64, 20);
             this.releaseFromControl.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.releaseFromControl, "Movies released before this year will not appear in the search.");
             // 
             // searchTextBox
             // 
@@ -487,6 +501,7 @@
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(158, 20);
             this.searchTextBox.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.searchTextBox, "Search for part of a movie title");
             // 
             // MovieTabPanel
             // 

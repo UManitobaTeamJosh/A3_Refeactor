@@ -23,10 +23,22 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.SuspendLayout();
+            // 
+            // TabPanel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "TabPanel";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        public System.Windows.Forms.ToolTip toolTip1;
+
     }
 }

@@ -42,6 +42,7 @@ namespace A3Proj {
                 root.Add(new XElement("rating", movie.getRating()));
                 root.Add(new XElement("userrating", movie.getUserRating()));
                 root.Add(new XElement("review", movie.getReview()));
+                root.Add(new XElement("watchedDate", movie.getDateWatched()));
                 foreach (String genre in movie.getGenres()) {
                     root.Add(new XElement("genre", genre));
                 }
@@ -68,6 +69,7 @@ namespace A3Proj {
                     //certification
                     String director = null;
                     String review = null;
+                    String dateWatched = null;
                     int rating = 99;
                     int userRating = 99;
                     List<string> genres = new List<string>();
@@ -91,6 +93,9 @@ namespace A3Proj {
                             case "review":
                                 review = p2.Value;
                                 break;
+                            case "watchedDate":
+                                dateWatched = p2.Value;
+                                break;
                             case "director":
                                 director = p2.Value;
                                 break;
@@ -109,7 +114,7 @@ namespace A3Proj {
                         }
                         eIndex++;
                     }//foreach subelement
-                    Movie movie = new Movie(name, year, length, director, rating,userRating, review, genres, actors);
+                    Movie movie = new Movie(name, year, length, director, rating,userRating, review,dateWatched, genres, actors);
                     movieList.Add(movie);
                 }//foreach descendant
                 //Done loading movies. Do something with movielist now.

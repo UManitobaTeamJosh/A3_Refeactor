@@ -36,6 +36,7 @@
             this.label_YourRating = new System.Windows.Forms.Label();
             this.label_negRating = new System.Windows.Forms.Label();
             this.label_negRatingUser = new System.Windows.Forms.Label();
+            this.label_watched = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieImage)).BeginInit();
             this.SuspendLayout();
@@ -146,6 +147,19 @@
             this.label_negRatingUser.TabIndex = 7;
             this.label_negRatingUser.Text = "%rating%";
             // 
+            // label_watched
+            // 
+            this.label_watched.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.label_watched.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_watched.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_watched.Location = new System.Drawing.Point(-1, 12);
+            this.label_watched.Name = "label_watched";
+            this.label_watched.Size = new System.Drawing.Size(145, 23);
+            this.label_watched.TabIndex = 8;
+            this.label_watched.Text = "Watched";
+            this.label_watched.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_watched.Visible = false;
+            // 
             // MovieBox
             // 
             this.AllowDrop = true;
@@ -153,6 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label_watched);
             this.Controls.Add(this.label_negRatingUser);
             this.Controls.Add(this.label_negRating);
             this.Controls.Add(this.label_YourRating);
@@ -190,6 +205,7 @@
         private System.Windows.Forms.Label label_YourRating;
         private System.Windows.Forms.Label label_negRating;
         private System.Windows.Forms.Label label_negRatingUser;
+        private System.Windows.Forms.Label label_watched;
 
     }
 }

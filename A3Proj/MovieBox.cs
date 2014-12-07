@@ -44,6 +44,7 @@ namespace A3Proj {
                 this.Height = 269;
             }
             setRatings();
+            setWatched();
         }
 
         /*
@@ -108,6 +109,13 @@ namespace A3Proj {
                         label_negRatingUser.Left = label_userRating.Right-5;
                     }
                 }
+            }
+        }
+
+        private void setWatched() {
+            String date = movie.getDateWatched();
+            if (!String.IsNullOrWhiteSpace(date)) {
+                label_watched.Visible = true;
             }
         }
 

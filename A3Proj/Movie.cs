@@ -14,11 +14,12 @@ namespace A3Proj {
         private int rating;
         private int userRating;
         private String review;
+        private String dateWatched;
         private List<String> genreList;
         private List<String> actorList;
 
         public Movie(String title, int year, int length, String director,
-            int rating,int userRating, String review, List<String> genreList, List<String> actorList) {
+            int rating,int userRating, String review,String dateWatched, List<String> genreList, List<String> actorList) {
             this.title = title;
             this.year = year;
             this.length = length;
@@ -26,6 +27,7 @@ namespace A3Proj {
             this.rating = rating;
             this.userRating = userRating;
             this.review = review;
+            this.dateWatched = dateWatched;
             this.genreList = genreList;
             this.actorList = actorList;
         }
@@ -137,6 +139,10 @@ namespace A3Proj {
             this.review = review;
         }
 
+        public void setDateWatched(String date) {
+            this.dateWatched = date;
+        }
+
 
         //Accessors
         public String getTitle() { return title; }
@@ -146,6 +152,7 @@ namespace A3Proj {
         public int getRating() { return rating; }
         public int getUserRating() { return userRating; }
         public String getReview() { return review; }
+        public String getDateWatched() { return dateWatched; }
         public String[] getGenres() { return genreList.ToArray(); }
         public String[] getActors() { return actorList.ToArray(); }
 

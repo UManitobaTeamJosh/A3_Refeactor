@@ -71,6 +71,14 @@ namespace A3Proj.PopoutForms {
                     label_NegRating.Left = label_rating.Right - 10;
                 }
             }
+            //Set date
+            String dateWatched = movie.getDateWatched();
+            if (!String.IsNullOrWhiteSpace(dateWatched)) {
+                radio_on.Checked = true;
+                label_date.Text = dateWatched;
+            } else {
+                radio_not.Checked = true;
+            }
         }
 
         private void button_AddShortlist_Click(object sender, EventArgs e) {
@@ -83,12 +91,45 @@ namespace A3Proj.PopoutForms {
             String userReview = richTextBox_Review.Text;
             movie.changeUserRating(userRating);
             movie.setReview(userReview);
+            //updateDate
+            if (radio_on.Checked) {
+                movie.setDateWatched(label_date.Text);
+            } else {
+                movie.setDateWatched("");
+            }
             parent.updateMovie(movie);
             this.Close();
         }
 
         private void button_Cancel_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) {
+            radio_on.Checked = true;
+            PopoutCalender calender = new PopoutCalender(this);
+            calender.ShowDialog();
+        }
+
+        public void sendDate(String date) {
+            label_date.Text = date;
+        }
+
+        private void NotWatchedChange(object sender, EventArgs e) {
+            radioChange();
+        }
+
+        private void watchOnChange(object sender, EventArgs e) {
+            radioChange();
+        }
+
+        private void radioChange() {
+            if (radio_on.Checked) {
+                label_date.Enabled = true;
+                label_date.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            } else {
+                label_date.Enabled = false;
+            }
         }
 
 

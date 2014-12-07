@@ -63,6 +63,26 @@ namespace A3Proj.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calenderIcon {
+            get {
+                object obj = ResourceManager.GetObject("calenderIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calenderIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("calenderIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap placeholder_movie {
             get {
                 object obj = ResourceManager.GetObject("placeholder_movie", resourceCulture);

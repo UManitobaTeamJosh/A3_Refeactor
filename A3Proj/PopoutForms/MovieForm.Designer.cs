@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.MoviePosterPictureBox = new System.Windows.Forms.PictureBox();
             this.label_MovieTitle = new System.Windows.Forms.Label();
             this.label_basicMovieInfo = new System.Windows.Forms.Label();
             this.button_AddShortlist = new System.Windows.Forms.Button();
@@ -37,18 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label_rating = new System.Windows.Forms.Label();
             this.label_NegRating = new System.Windows.Forms.Label();
+            this.radio_not = new System.Windows.Forms.RadioButton();
+            this.radio_on = new System.Windows.Forms.RadioButton();
+            this.label_date = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MoviePosterPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePosterPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MoviePosterPictureBox
-            // 
-            this.MoviePosterPictureBox.Image = global::A3Proj.Properties.Resources.placeholder_movie;
-            this.MoviePosterPictureBox.Location = new System.Drawing.Point(12, 12);
-            this.MoviePosterPictureBox.Name = "MoviePosterPictureBox";
-            this.MoviePosterPictureBox.Size = new System.Drawing.Size(157, 228);
-            this.MoviePosterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MoviePosterPictureBox.TabIndex = 0;
-            this.MoviePosterPictureBox.TabStop = false;
             // 
             // label_MovieTitle
             // 
@@ -92,6 +87,7 @@
             // 
             // comboBox_Rating
             // 
+            this.comboBox_Rating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_Rating.FormattingEnabled = true;
             this.comboBox_Rating.Items.AddRange(new object[] {
             "0",
@@ -105,16 +101,17 @@
             "8",
             "9",
             "10"});
-            this.comboBox_Rating.Location = new System.Drawing.Point(391, 277);
+            this.comboBox_Rating.Location = new System.Drawing.Point(442, 381);
             this.comboBox_Rating.Name = "comboBox_Rating";
             this.comboBox_Rating.Size = new System.Drawing.Size(50, 21);
             this.comboBox_Rating.TabIndex = 5;
             // 
             // label_YourReview
             // 
+            this.label_YourReview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_YourReview.AutoSize = true;
             this.label_YourReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_YourReview.Location = new System.Drawing.Point(8, 273);
+            this.label_YourReview.Location = new System.Drawing.Point(52, 376);
             this.label_YourReview.Name = "label_YourReview";
             this.label_YourReview.Size = new System.Drawing.Size(117, 24);
             this.label_YourReview.TabIndex = 6;
@@ -122,15 +119,18 @@
             // 
             // richTextBox_Review
             // 
-            this.richTextBox_Review.Location = new System.Drawing.Point(13, 301);
+            this.richTextBox_Review.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_Review.Location = new System.Drawing.Point(13, 405);
             this.richTextBox_Review.Name = "richTextBox_Review";
-            this.richTextBox_Review.Size = new System.Drawing.Size(471, 218);
+            this.richTextBox_Review.Size = new System.Drawing.Size(522, 218);
             this.richTextBox_Review.TabIndex = 7;
             this.richTextBox_Review.Text = "";
             // 
             // button_Cancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(409, 525);
+            this.button_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Cancel.Location = new System.Drawing.Point(460, 629);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(75, 23);
             this.button_Cancel.TabIndex = 8;
@@ -140,7 +140,8 @@
             // 
             // button_Save
             // 
-            this.button_Save.Location = new System.Drawing.Point(322, 525);
+            this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Save.Location = new System.Drawing.Point(373, 629);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(75, 23);
             this.button_Save.TabIndex = 9;
@@ -150,9 +151,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(447, 277);
+            this.label1.Location = new System.Drawing.Point(498, 381);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 20);
             this.label1.TabIndex = 10;
@@ -160,9 +162,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(296, 276);
+            this.label2.Location = new System.Drawing.Point(347, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 11;
@@ -190,11 +193,72 @@
             this.label_NegRating.TabIndex = 13;
             this.label_NegRating.Text = "%rating%";
             // 
+            // radio_not
+            // 
+            this.radio_not.AutoSize = true;
+            this.radio_not.Location = new System.Drawing.Point(342, 292);
+            this.radio_not.Name = "radio_not";
+            this.radio_not.Size = new System.Drawing.Size(89, 17);
+            this.radio_not.TabIndex = 14;
+            this.radio_not.TabStop = true;
+            this.radio_not.Text = "Not Watched";
+            this.radio_not.UseVisualStyleBackColor = true;
+            this.radio_not.CheckedChanged += new System.EventHandler(this.NotWatchedChange);
+            // 
+            // radio_on
+            // 
+            this.radio_on.AutoSize = true;
+            this.radio_on.Location = new System.Drawing.Point(342, 324);
+            this.radio_on.Name = "radio_on";
+            this.radio_on.Size = new System.Drawing.Size(84, 17);
+            this.radio_on.TabIndex = 15;
+            this.radio_on.TabStop = true;
+            this.radio_on.Text = "Watched on";
+            this.radio_on.UseVisualStyleBackColor = true;
+            this.radio_on.CheckedChanged += new System.EventHandler(this.watchOnChange);
+            // 
+            // label_date
+            // 
+            this.label_date.AutoSize = true;
+            this.label_date.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_date.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_date.Location = new System.Drawing.Point(432, 323);
+            this.label_date.Name = "label_date";
+            this.label_date.Size = new System.Drawing.Size(66, 18);
+            this.label_date.TabIndex = 16;
+            this.label_date.Text = "xx/xx/xxxx";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::A3Proj.Properties.Resources.calenderIcon1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(506, 320);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 23);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // MoviePosterPictureBox
+            // 
+            this.MoviePosterPictureBox.Image = global::A3Proj.Properties.Resources.placeholder_movie;
+            this.MoviePosterPictureBox.Location = new System.Drawing.Point(12, 12);
+            this.MoviePosterPictureBox.Name = "MoviePosterPictureBox";
+            this.MoviePosterPictureBox.Size = new System.Drawing.Size(157, 228);
+            this.MoviePosterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MoviePosterPictureBox.TabIndex = 0;
+            this.MoviePosterPictureBox.TabStop = false;
+            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 560);
+            this.ClientSize = new System.Drawing.Size(547, 664);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label_date);
+            this.Controls.Add(this.radio_on);
+            this.Controls.Add(this.radio_not);
             this.Controls.Add(this.label_NegRating);
             this.Controls.Add(this.label_rating);
             this.Controls.Add(this.label2);
@@ -211,6 +275,7 @@
             this.Controls.Add(this.MoviePosterPictureBox);
             this.Name = "MovieForm";
             this.Text = "s";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePosterPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,5 +298,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_rating;
         private System.Windows.Forms.Label label_NegRating;
+        private System.Windows.Forms.RadioButton radio_not;
+        private System.Windows.Forms.RadioButton radio_on;
+        private System.Windows.Forms.Label label_date;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

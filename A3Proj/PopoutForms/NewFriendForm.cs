@@ -55,7 +55,7 @@ namespace A3Proj.PopoutForms {
                     pictureBox1.BackgroundImage = new Bitmap(friend.imageFilePath);
                 }
             } catch (Exception e) {
-                
+                Console.WriteLine(e.ToString());
             }
             //load recc movies
             foreach (String movie in friend.recMovies) {

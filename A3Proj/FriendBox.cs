@@ -23,7 +23,6 @@ namespace A3Proj {
             label_Name.Text = friend.name;
             if (!String.IsNullOrWhiteSpace(friend.imageFilePath) && System.IO.File.Exists(friend.imageFilePath)) {
                 friendImage.BackgroundImage = new Bitmap(friend.imageFilePath);
-                Console.WriteLine("Image set");
             }
         }
 

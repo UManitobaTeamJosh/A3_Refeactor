@@ -144,6 +144,9 @@ namespace A3Proj.TabPanels {
          *  and also any friends referenced in the current party.
          */
         public void editFriendData(Friend friend, int index) {
+            foreach (String s in friend.recMovies) {
+                Console.WriteLine(s);
+            }
             friendList[index] = friend;
             for (int i = 0; i < party.Count; i++) {
                 if (party[i].index == index) {
@@ -181,6 +184,7 @@ namespace A3Proj.TabPanels {
                     String name = null;
                     String imagePath = null;
                     List<String> genreList = new List<String>();
+                    List<String> movieList = new List<String>();
                     foreach (var p2 in elementItems) {
                         String elementName = p2.Name.ToString();
                         if (elementName.Equals("name")) {
@@ -189,10 +193,13 @@ namespace A3Proj.TabPanels {
                             genreList.Add(p2.Value);
                         } else if (elementName.Equals("imagePath")) {
                             imagePath = p2.Value;
+                        } else if (elementName.Equals("movieTitle")) {
+                            movieList.Add(p2.Value);
                         }
                     }//foreach inner
                     Friend newFriend = new Friend(name,genreList);
                     newFriend.imageFilePath = imagePath;
+                    newFriend.recMovies = movieList;
                     tempFriendList.Add(newFriend);
                 }//foreach outer
                 friendList = tempFriendList;
@@ -213,6 +220,9 @@ namespace A3Proj.TabPanels {
                 foreach (String genre in friend.favoriteGenres) {
                     root.Add(new XElement("genre",genre));
                 }
+                foreach (String movie in friend.recMovies) {
+                    root.Add(new XElement("movieTitle", movie));
+                }
                 xdoc.Element("friendList").Add(root);
             }
             xdoc.Save(FRIENDS_SAVE_FILE_NAME);
@@ -228,7 +238,6 @@ namespace A3Proj.TabPanels {
 
         private void removeFromPartyToolStripMenuItem_Click(object sender, EventArgs e) {
             if (listBox_party.SelectedIndex >= 0 && listBox_party.SelectedIndex < listBox_party.Items.Count) {
-                Console.WriteLine(listBox_party.SelectedIndex);
                 party.RemoveAt(listBox_party.SelectedIndex);
                 populatePartyListBox();
                 updateRecGenres();

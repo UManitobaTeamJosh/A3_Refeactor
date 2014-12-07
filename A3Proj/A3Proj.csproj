@@ -134,6 +134,9 @@
     <EmbeddedResource Include="MovieBox.resx">
       <DependentUpon>MovieBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopoutForms\DataForm.resx">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopoutForms\MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
     </EmbeddedResource>

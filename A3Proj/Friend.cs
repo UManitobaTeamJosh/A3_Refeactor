@@ -11,10 +11,12 @@ namespace A3Proj {
         public List<String> favoriteGenres;
         public int index;
         public String imageFilePath;
+        public List<String> recMovies;
 
         public Friend(String name) {
             this.name = name;
-            favoriteGenres = new List<string>();
+            favoriteGenres = new List<String>();
+            recMovies = new List<String>();
         }
 
         public Friend(String name, List<String> favoriteGenres) {
@@ -25,5 +27,6 @@ namespace A3Proj {
         public String toString() {
             return name;
         }
+
     }
 }

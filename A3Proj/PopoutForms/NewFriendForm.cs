@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace A3Proj.PopoutForms {
-    public partial class FriendForm : Form {
+    public partial class FriendForm : DataForm {
 
         A3Proj.TabPanels.FriendsTabPanel parent;
         Friend friend;
@@ -56,6 +56,10 @@ namespace A3Proj.PopoutForms {
                 }
             } catch (Exception e) {
                 
+            }
+            //load recc movies
+            foreach (String movie in friend.recMovies) {
+                listbox_reccMovies.Items.Add(movie);
             }
         }
 
@@ -137,6 +141,7 @@ namespace A3Proj.PopoutForms {
             if (!String.IsNullOrWhiteSpace(name)) {
                 friend = new Friend(name,generateFavoriteGenres());
                 friend.imageFilePath = imageFilePath;
+                friend.recMovies = stringListFromListBox();
             } else {
                 Console.WriteLine("friend gen fail - name invalid");
             }
@@ -154,22 +159,34 @@ namespace A3Proj.PopoutForms {
                 friend.name = name;
                 friend.favoriteGenres = generateFavoriteGenres();
                 friend.imageFilePath = imageFilePath;
+                friend.recMovies = stringListFromListBox();
                 parent.editFriendData(friend, friend.index);
             }
             this.Close();
+        }
+
+        private List<String> stringListFromListBox() {
+            List<String> movies = new List<String>();
+            for (int i = 0; i < listbox_reccMovies.Items.Count; i++) {
+                movies.Add(listbox_reccMovies.Items[i].ToString());
+            }
+                return movies;
         }
 
         private void leave_textBoxName(object sender, EventArgs e) {
             leaveTextBoxName();
         }
 
+        /*
+         *  Allow user to select an image path using an OpenFileDialog.
+         *  Save the path and update the image.
+         */
         private void button_setImage_Click(object sender, EventArgs e) {
             using (OpenFileDialog oFD = new OpenFileDialog()) {
                 oFD.Title = "Select Image";
                 oFD.Filter = "Image Files (*.png) | *.png;*.jpg;*.jpeg;*.bmp";
                 if (oFD.ShowDialog() == DialogResult.OK) {
                     pictureBox1.BackgroundImage = new Bitmap(oFD.FileName);
-                    //Console.WriteLine(oFD.FileName);
                     imageFilePath = oFD.FileName;
                 }
             }
@@ -178,6 +195,25 @@ namespace A3Proj.PopoutForms {
         private void button_clear_Click(object sender, EventArgs e) {
             imageFilePath = "";
             pictureBox1.BackgroundImage = Properties.Resources.placeholder_movie;
+        }
+
+        private void button_addMovie_Click(object sender, EventArgs e) {
+            String newMovieTitle = textBox_newRecMovie.Text;
+            if (!String.IsNullOrWhiteSpace(newMovieTitle)) {
+                listbox_reccMovies.Items.Add(newMovieTitle);
+                textBox_newRecMovie.Text = "";
+            } else {
+                MessageBox.Show("Please fill the text box before adding a movie");
+            }
+        }
+
+        /*
+         *  Allow user to remove movies by right clicking.
+         */
+        private void removeMovieToolStripMenuItem3_Click(object sender, EventArgs e) {
+            if (listbox_reccMovies.SelectedIndex >= 0 && listbox_reccMovies.SelectedIndex < listbox_reccMovies.Items.Count) {
+                listbox_reccMovies.Items.RemoveAt(listbox_reccMovies.SelectedIndex);
+            }
         }
 
 

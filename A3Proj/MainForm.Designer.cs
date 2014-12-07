@@ -27,17 +27,19 @@
             this.tabHome = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tabMovies = new System.Windows.Forms.TabPage();
+            this.movieTabPanel1 = new A3Proj.TabPanels.MovieTabPanel(movieData);
             this.tabLists = new System.Windows.Forms.TabPage();
             this.tabFriends = new System.Windows.Forms.TabPage();
-            this.tabHistory = new System.Windows.Forms.TabPage();
-            this.tabSettings = new System.Windows.Forms.TabPage();
-            this.movieTabPanel1 = new A3Proj.TabPanels.MovieTabPanel(movieData);
             this.friendsTabPanel1 = new A3Proj.TabPanels.FriendsTabPanel();
+            this.tabHistory = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabSettings = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.tabMovies.SuspendLayout();
+            this.tabLists.SuspendLayout();
             this.tabFriends.SuspendLayout();
             this.tabHistory.SuspendLayout();
             this.tabSettings.SuspendLayout();
@@ -92,8 +94,18 @@
             this.tabMovies.Text = "Movies";
             this.tabMovies.UseVisualStyleBackColor = true;
             // 
+            // movieTabPanel1
+            // 
+            this.movieTabPanel1.BackColor = System.Drawing.Color.White;
+            this.movieTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.movieTabPanel1.Location = new System.Drawing.Point(3, 3);
+            this.movieTabPanel1.Name = "movieTabPanel1";
+            this.movieTabPanel1.Size = new System.Drawing.Size(813, 603);
+            this.movieTabPanel1.TabIndex = 1;
+            // 
             // tabLists
             // 
+            this.tabLists.Controls.Add(this.label4);
             this.tabLists.Location = new System.Drawing.Point(4, 29);
             this.tabLists.Name = "tabLists";
             this.tabLists.Padding = new System.Windows.Forms.Padding(3);
@@ -112,6 +124,14 @@
             this.tabFriends.Text = "Friends";
             this.tabFriends.UseVisualStyleBackColor = true;
             // 
+            // friendsTabPanel1
+            // 
+            this.friendsTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.friendsTabPanel1.Location = new System.Drawing.Point(0, 0);
+            this.friendsTabPanel1.Name = "friendsTabPanel1";
+            this.friendsTabPanel1.Size = new System.Drawing.Size(819, 609);
+            this.friendsTabPanel1.TabIndex = 0;
+            // 
             // tabHistory
             // 
             this.tabHistory.Controls.Add(this.label2);
@@ -123,33 +143,6 @@
             this.tabHistory.Text = "History";
             this.tabHistory.UseVisualStyleBackColor = true;
             // 
-            // tabSettings
-            // 
-            this.tabSettings.Controls.Add(this.label3);
-            this.tabSettings.Location = new System.Drawing.Point(4, 29);
-            this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(819, 609);
-            this.tabSettings.TabIndex = 5;
-            this.tabSettings.Text = "Settings";
-            this.tabSettings.UseVisualStyleBackColor = true;
-            // 
-            // movieTabPanel1
-            // 
-            this.movieTabPanel1.BackColor = System.Drawing.Color.White;
-            this.movieTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.movieTabPanel1.Location = new System.Drawing.Point(3, 3);
-            this.movieTabPanel1.Name = "movieTabPanel1";
-            this.movieTabPanel1.Size = new System.Drawing.Size(813, 603);
-            this.movieTabPanel1.TabIndex = 1;
-            // 
-            // friendsTabPanel1
-            // 
-            this.friendsTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.friendsTabPanel1.Location = new System.Drawing.Point(0, 0);
-            this.friendsTabPanel1.Name = "friendsTabPanel1";
-            this.friendsTabPanel1.Size = new System.Drawing.Size(819, 609);
-            this.friendsTabPanel1.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -160,6 +153,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Not in Prototype";
             // 
+            // tabSettings
+            // 
+            this.tabSettings.Controls.Add(this.label3);
+            this.tabSettings.Location = new System.Drawing.Point(4, 29);
+            this.tabSettings.Name = "tabSettings";
+            this.tabSettings.Size = new System.Drawing.Size(819, 609);
+            this.tabSettings.TabIndex = 5;
+            this.tabSettings.Text = "Settings";
+            this.tabSettings.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -168,6 +171,15 @@
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Not in Prototype";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(293, 284);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(212, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Not in Prototype. See shortlist in Movies tab";
             // 
             // MainForm
             // 
@@ -182,6 +194,8 @@
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
             this.tabMovies.ResumeLayout(false);
+            this.tabLists.ResumeLayout(false);
+            this.tabLists.PerformLayout();
             this.tabFriends.ResumeLayout(false);
             this.tabHistory.ResumeLayout(false);
             this.tabHistory.PerformLayout();
@@ -205,5 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace A3Proj.TabPanels{
     public partial class MovieTabPanel : A3Proj.TabPanels.TabPanel {
 
         private static readonly int MOVIE_PAGE_CAPACITY = 50;
+        private static readonly String SHORTLIST_FILE = "shortList.xml";
 
         private MovieData movieData;
         private List<String> shortList;
@@ -20,6 +23,7 @@ namespace A3Proj.TabPanels{
         public MovieTabPanel() {
             InitializeComponent();
             shortList = new List<String>();
+            loadShortList();
         }
 
         public MovieTabPanel(MovieData mData) :this() {
@@ -111,12 +115,37 @@ namespace A3Proj.TabPanels{
             return actors;
         }
 
+        //Adds item to shortList and updates the listBox
         private void pushToShortlist(String movieTitle) {
             shortList.Add(movieTitle);
             listBox_shortlist.Items.Clear();
             foreach(String movie in shortList){
                 listBox_shortlist.Items.Add(movie);
             }
+            saveShortList();
+        }
+
+        private void loadShortList() {
+            if (System.IO.File.Exists(SHORTLIST_FILE)) {
+                XDocument xmlSource = XDocument.Load(SHORTLIST_FILE);
+                IEnumerable<XElement> items = xmlSource.Descendants("movieTitle");
+                shortList.Clear();
+                listBox_shortlist.Items.Clear();
+                foreach (var p in items) {
+                    shortList.Add(p.Value);
+                }
+                foreach (String movieTitle in shortList) {
+                    listBox_shortlist.Items.Add(movieTitle);
+                }
+            }
+        }
+
+        private void saveShortList() {
+            XDocument xdoc = new XDocument(new XElement("movieList"));
+            foreach (String movieTitle in shortList) {
+                xdoc.Element("movieList").Add(new XElement("movieTitle", movieTitle));
+            }
+            xdoc.Save(SHORTLIST_FILE);
         }
 
         /*
@@ -203,6 +232,7 @@ namespace A3Proj.TabPanels{
             if (selIndex > -1) {
                 listBox_shortlist.Items.RemoveAt(selIndex);
                 shortList.RemoveAt(selIndex);
+                saveShortList();
             }
             button_shortlistRemoveSel.Enabled = false;
         }

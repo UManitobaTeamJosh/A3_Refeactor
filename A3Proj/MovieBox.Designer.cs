@@ -26,14 +26,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieBox));
             this.labelMovieTitle = new System.Windows.Forms.Label();
-            this.movieImage = new System.Windows.Forms.PictureBox();
             this.labelMovieYear = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToShortlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.movieImage)).BeginInit();
+            this.movieImage = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movieImage)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMovieTitle
@@ -45,19 +45,6 @@
             this.labelMovieTitle.Size = new System.Drawing.Size(27, 13);
             this.labelMovieTitle.TabIndex = 0;
             this.labelMovieTitle.Text = "Title";
-            // 
-            // movieImage
-            // 
-            this.movieImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.movieImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("movieImage.BackgroundImage")));
-            this.movieImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.movieImage.Location = new System.Drawing.Point(2, 2);
-            this.movieImage.Margin = new System.Windows.Forms.Padding(2);
-            this.movieImage.Name = "movieImage";
-            this.movieImage.Size = new System.Drawing.Size(140, 161);
-            this.movieImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.movieImage.TabIndex = 1;
-            this.movieImage.TabStop = false;
             // 
             // labelMovieYear
             // 
@@ -89,6 +76,19 @@
             this.addToShortlistToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.addToShortlistToolStripMenuItem.Text = "Add to shortlist";
             // 
+            // movieImage
+            // 
+            this.movieImage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.movieImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("movieImage.BackgroundImage")));
+            this.movieImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.movieImage.Location = new System.Drawing.Point(2, 2);
+            this.movieImage.Margin = new System.Windows.Forms.Padding(2);
+            this.movieImage.Name = "movieImage";
+            this.movieImage.Size = new System.Drawing.Size(139, 161);
+            this.movieImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.movieImage.TabIndex = 1;
+            this.movieImage.TabStop = false;
+            // 
             // MovieBox
             // 
             this.AllowDrop = true;
@@ -107,8 +107,8 @@
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.dradDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragStart);
-            ((System.ComponentModel.ISupportInitialize)(this.movieImage)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.movieImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

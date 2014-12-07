@@ -20,6 +20,10 @@ namespace A3Proj.TabPanels{
         public MovieTabPanel() {
             InitializeComponent();
             shortList = new List<String>();
+            if (movieData == null) {
+                movieData = new MovieData();
+                MessageBox.Show("MovieTabPanel initialized WITHOUT reference to global MovieData object.\nCertain features will not work.");
+            }
         }
 
         public MovieTabPanel(MovieData mData) :this() {

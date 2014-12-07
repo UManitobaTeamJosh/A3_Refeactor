@@ -498,6 +498,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox pageSelectionBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label fillLabel0;
+        private System.Windows.Forms.Button button_shortlistRemoveSel;
+        private System.Windows.Forms.TextBox searchTextBoxDirector;
+        private System.Windows.Forms.Label label_DirectorField;
+        private System.Windows.Forms.RichTextBox textBox_ActorQuery;
         private System.Windows.Forms.CheckedListBox genreCheckedList;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label label9;
@@ -515,11 +520,6 @@
         private System.Windows.Forms.NumericUpDown releaseToControl;
         private System.Windows.Forms.NumericUpDown releaseFromControl;
         private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.RichTextBox textBox_ActorQuery;
-        private System.Windows.Forms.TextBox searchTextBoxDirector;
-        private System.Windows.Forms.Label label_DirectorField;
-        private System.Windows.Forms.Button button_shortlistRemoveSel;
-        private System.Windows.Forms.Label fillLabel0;
 
 
     }

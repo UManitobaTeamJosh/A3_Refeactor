@@ -182,8 +182,8 @@ namespace A3Proj {
                         }
                         eIndex++;
                     }//foreach subelement
-                    Movie movie = new Movie(name, year, length, director, rating, genres, actors);
-                    movieList.Add(movie);
+                    //Movie movie = new Movie(name, year, length, director, rating, genres, actors);
+                   // movieList.Add(movie);
                 }//foreach descendant
                 //Done loading movies. Do something with movielist now.
                 /*

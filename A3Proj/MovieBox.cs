@@ -18,17 +18,32 @@ namespace A3Proj {
 
         private Movie movie;
         private A3Proj.TabPanels.MovieTabPanel parent;
+        private int ratingDisplayMode = 0;
+
+        
 
         public MovieBox() {
             InitializeComponent();
         }
 
+        /*
+         *  If rating display is not specified, show the database rating (not user rating)
+         */
         public MovieBox(Movie movie, A3Proj.TabPanels.MovieTabPanel parent) : this() {
             this.movie = movie;
             this.parent = parent;
             this.labelMovieYear.Text = movie.getYear().ToString();
             setToolTips(movie.getTitle());
             setTitle(movie.getTitle());
+            setRatings();
+        }
+
+        public MovieBox(Movie movie, A3Proj.TabPanels.MovieTabPanel parent,int ratingDisplayMode): this(movie,parent) {
+            this.ratingDisplayMode = ratingDisplayMode;
+            if (ratingDisplayMode == 2) {
+                this.Height = 269;
+            }
+            setRatings();
         }
 
         /*
@@ -43,7 +58,57 @@ namespace A3Proj {
         }
 
         private void setRatings() {
-
+            Label someRating = label_rating;
+            someRating.Text = "";
+            label_negRating.Text = "";
+            label_negRatingUser.Text = "";
+            label_userRating.Text = "";
+            int rating = movie.getRating();
+            if (ratingDisplayMode == 1) {
+                rating = movie.getUserRating();
+            }
+            if (rating <= 10) {
+                String ratingString = "";
+                for (int i = 0; i < rating; i++) {
+                    ratingString += "* ";
+                }
+                someRating.Text = ratingString;
+                //Do empty stars now
+                String negRatingString = "";
+                for (int i = 0; i < 10 - rating; i++) {
+                    negRatingString += "* ";
+                }
+                if (rating <= 10) {
+                    Label negRating = label_negRating;
+                    negRating.Text = negRatingString;
+                    if (rating == 0) {
+                        negRating.Left = label_rating.Left;
+                    } else {
+                        negRating.Left = label_rating.Right - 5;
+                    }
+                }
+            }
+            //If we're showing both...
+            if (ratingDisplayMode == 2) {
+                rating = movie.getUserRating();
+                if (rating <= 10) {
+                    String ratingString = "";
+                    for (int i = 0; i < rating; i++) {
+                        ratingString += "* ";
+                    }
+                    label_userRating.Text = ratingString;
+                    String negRatingString = "";
+                    for (int i = 0; i < 10 - rating; i++) {
+                        negRatingString += "* ";
+                    }
+                    label_negRatingUser.Text = negRatingString;
+                    if (rating == 0) {
+                        label_negRatingUser.Left = label_userRating.Left;
+                    } else {
+                        label_negRatingUser.Left = label_userRating.Right-5;
+                    }
+                }
+            }
         }
 
         /*

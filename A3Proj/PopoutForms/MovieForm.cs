@@ -46,11 +46,49 @@ namespace A3Proj.PopoutForms {
             }
             String directorActorsDescription = "Director\n    " + director + "\nActors\n" + actors;
             label_DirectorActor.Text = directorActorsDescription;
+            //Set review and user rating
+            if (movie.getUserRating() >= 0 && movie.getUserRating() <= 10) {
+                comboBox_Rating.Text = movie.getUserRating().ToString();
+            }
+            if (movie.getReview() != null) {
+                richTextBox_Review.Text = movie.getReview();
+            }
+            //Set stars (database rating)
+            if (movie.getRating() <= 10) {
+                String ratingString = "";
+                String negRatingString = "";
+                for (int i = 0; i < movie.getRating(); i++) {
+                    ratingString += "* ";
+                }
+                for (int i = 0; i < 10 - movie.getRating(); i++) {
+                    negRatingString += "* ";
+                }
+                label_rating.Text = ratingString;
+                label_NegRating.Text = negRatingString;
+                if (movie.getRating() == 0) {
+                    label_NegRating.Left = label_rating.Right;
+                } else {
+                    label_NegRating.Left = label_rating.Right - 10;
+                }
+            }
         }
 
         private void button_AddShortlist_Click(object sender, EventArgs e) {
             button_AddShortlist.Enabled = false;
             parent.addMovieToShortlist(movie);
+        }
+
+        private void button_Save_Click(object sender, EventArgs e) {
+            int userRating = Convert.ToInt32(comboBox_Rating.Text);
+            String userReview = richTextBox_Review.Text;
+            movie.changeUserRating(userRating);
+            movie.setReview(userReview);
+            parent.updateMovie(movie);
+            this.Close();
+        }
+
+        private void button_Cancel_Click(object sender, EventArgs e) {
+            this.Close();
         }
 
 

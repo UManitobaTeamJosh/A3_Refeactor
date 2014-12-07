@@ -12,16 +12,20 @@ namespace A3Proj {
         private int length;
         private String director;
         private int rating;
+        private int userRating;
+        private String review;
         private List<String> genreList;
         private List<String> actorList;
 
         public Movie(String title, int year, int length, String director,
-            int rating, List<String> genreList, List<String> actorList) {
+            int rating,int userRating, String review, List<String> genreList, List<String> actorList) {
             this.title = title;
             this.year = year;
             this.length = length;
             this.director = director;
             this.rating = rating;
+            this.userRating = userRating;
+            this.review = review;
             this.genreList = genreList;
             this.actorList = actorList;
         }
@@ -30,6 +34,13 @@ namespace A3Proj {
             bool output = false;
             output = genreList.Contains(genreQuery);
             return output;
+        }
+
+        /*
+         *  Two movies are considered identical if they have the same title, length, and year.
+         */
+        public bool equals(Movie other) {
+            return (title.Equals(other.getTitle()) && year == other.getYear() && length == other.getLength());
         }
 
         /*
@@ -90,17 +101,40 @@ namespace A3Proj {
          *  Changes the rating of the movie. 
          *  A valid movie rating is
          *      >= 0
-         *      <= 5
+         *      <= 10
          *  
          *  Returns true if the rating was changed successfully.
          *  Returns false if the rating was unable to be changed.
          */
         public bool changeRating(int newRating) {
             bool output = false;
-            if (newRating >= 0 && newRating <= 5) {
+            if (newRating >= 0 && newRating <= 10) {
                 output = true;
+                rating = newRating;
             }
             return output;
+        }
+
+        /*
+         *  Changes the rating of the movie. 
+         *  A valid movie rating is
+         *      >= 0
+         *      <= 10
+         *  
+         *  Returns true if the rating was changed successfully.
+         *  Returns false if the rating was unable to be changed.
+         */
+        public bool changeUserRating(int newRating) {
+            bool output = false;
+            if (newRating >= 0 && newRating <= 10) {
+                output = true;
+                userRating = newRating;
+            }
+            return output;
+        }
+
+        public void setReview(String review) {
+            this.review = review;
         }
 
 
@@ -110,6 +144,8 @@ namespace A3Proj {
         public int getLength() { return length; }
         public String getDirector() { return director; }
         public int getRating() { return rating; }
+        public int getUserRating() { return userRating; }
+        public String getReview() { return review; }
         public String[] getGenres() { return genreList.ToArray(); }
         public String[] getActors() { return actorList.ToArray(); }
 

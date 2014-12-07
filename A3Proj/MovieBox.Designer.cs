@@ -32,6 +32,11 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToShortlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movieImage = new System.Windows.Forms.PictureBox();
+            this.label_rating = new System.Windows.Forms.Label();
+            this.label_userRating = new System.Windows.Forms.Label();
+            this.label_YourRating = new System.Windows.Forms.Label();
+            this.label_negRating = new System.Windows.Forms.Label();
+            this.label_negRatingUser = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movieImage)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +94,59 @@
             this.movieImage.TabIndex = 1;
             this.movieImage.TabStop = false;
             // 
+            // label_rating
+            // 
+            this.label_rating.AutoSize = true;
+            this.label_rating.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_rating.ForeColor = System.Drawing.Color.Orange;
+            this.label_rating.Location = new System.Drawing.Point(7, 205);
+            this.label_rating.Name = "label_rating";
+            this.label_rating.Size = new System.Drawing.Size(73, 16);
+            this.label_rating.TabIndex = 3;
+            this.label_rating.Text = "%rating%";
+            // 
+            // label_userRating
+            // 
+            this.label_userRating.AutoSize = true;
+            this.label_userRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_userRating.ForeColor = System.Drawing.Color.Orange;
+            this.label_userRating.Location = new System.Drawing.Point(7, 247);
+            this.label_userRating.Name = "label_userRating";
+            this.label_userRating.Size = new System.Drawing.Size(73, 16);
+            this.label_userRating.TabIndex = 4;
+            this.label_userRating.Text = "%rating%";
+            // 
+            // label_YourRating
+            // 
+            this.label_YourRating.AutoSize = true;
+            this.label_YourRating.Location = new System.Drawing.Point(6, 233);
+            this.label_YourRating.Name = "label_YourRating";
+            this.label_YourRating.Size = new System.Drawing.Size(63, 13);
+            this.label_YourRating.TabIndex = 5;
+            this.label_YourRating.Text = "Your Rating";
+            // 
+            // label_negRating
+            // 
+            this.label_negRating.AutoSize = true;
+            this.label_negRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_negRating.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_negRating.Location = new System.Drawing.Point(86, 205);
+            this.label_negRating.Name = "label_negRating";
+            this.label_negRating.Size = new System.Drawing.Size(73, 16);
+            this.label_negRating.TabIndex = 6;
+            this.label_negRating.Text = "%rating%";
+            // 
+            // label_negRatingUser
+            // 
+            this.label_negRatingUser.AutoSize = true;
+            this.label_negRatingUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_negRatingUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_negRatingUser.Location = new System.Drawing.Point(86, 247);
+            this.label_negRatingUser.Name = "label_negRatingUser";
+            this.label_negRatingUser.Size = new System.Drawing.Size(73, 16);
+            this.label_negRatingUser.TabIndex = 7;
+            this.label_negRatingUser.Text = "%rating%";
+            // 
             // MovieBox
             // 
             this.AllowDrop = true;
@@ -96,12 +154,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label_negRatingUser);
+            this.Controls.Add(this.label_negRating);
+            this.Controls.Add(this.label_YourRating);
+            this.Controls.Add(this.label_userRating);
+            this.Controls.Add(this.label_rating);
             this.Controls.Add(this.labelMovieYear);
             this.Controls.Add(this.movieImage);
             this.Controls.Add(this.labelMovieTitle);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MovieBox";
-            this.Size = new System.Drawing.Size(143, 224);
+            this.Size = new System.Drawing.Size(143, 228);
             this.Load += new System.EventHandler(this.MovieBox_Load);
             this.Click += new System.EventHandler(this.click);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.dradDrop);
@@ -123,6 +186,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToShortlistToolStripMenuItem;
+        private System.Windows.Forms.Label label_rating;
+        private System.Windows.Forms.Label label_userRating;
+        private System.Windows.Forms.Label label_YourRating;
+        private System.Windows.Forms.Label label_negRating;
+        private System.Windows.Forms.Label label_negRatingUser;
 
     }
 }

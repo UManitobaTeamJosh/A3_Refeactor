@@ -15,11 +15,42 @@ namespace A3Proj {
 
         private static readonly String FILE_NAME = "movies.xml";
         private List<Movie> movieList;
-        private List<List<Movie>> moviePageList;
 
         public MovieData() {
             movieList = new List<Movie>();
             loadXML();
+        }
+
+        public void updateMovie(Movie newMovie) {
+            for (int i = 0; i < movieList.Count; i++) {
+                if (newMovie.equals(movieList[i])) {
+                    movieList[i] = newMovie;
+                    Console.WriteLine("update successful");
+                }
+            }
+            saveXML();
+        }
+
+        private void saveXML() {
+            XDocument xdoc = new XDocument(new XElement("movieList"));
+            foreach (Movie movie in movieList) {
+                XElement root = new XElement("movie");
+                root.Add(new XElement("title", movie.getTitle()));
+                root.Add(new XElement("year", movie.getYear()));
+                root.Add(new XElement("length", movie.getLength()+" mins"));
+                root.Add(new XElement("director", movie.getDirector()));
+                root.Add(new XElement("rating", movie.getRating()));
+                root.Add(new XElement("userrating", movie.getUserRating()));
+                root.Add(new XElement("review", movie.getReview()));
+                foreach (String genre in movie.getGenres()) {
+                    root.Add(new XElement("genre", genre));
+                }
+                foreach (String actor in movie.getActors()) {
+                    root.Add(new XElement("actor", actor));
+                }
+                xdoc.Element("movieList").Add(root);
+            }
+            xdoc.Save(FILE_NAME);
         }
 
 
@@ -36,7 +67,9 @@ namespace A3Proj {
                     int length = -1;
                     //certification
                     String director = null;
-                    int rating = -1;
+                    String review = null;
+                    int rating = 99;
+                    int userRating = 99;
                     List<string> genres = new List<string>();
                     List<string> actors = new List<string>();
                     foreach (var p2 in elementItems) {
@@ -55,11 +88,17 @@ namespace A3Proj {
                             case "certification":
                                 //Unused
                                 break;
+                            case "review":
+                                review = p2.Value;
+                                break;
                             case "director":
                                 director = p2.Value;
                                 break;
                             case "rating":
                                 rating = Convert.ToInt32(p2.Value);
+                                break;
+                            case "userrating":
+                                userRating = Convert.ToInt32(p2.Value);
                                 break;
                             case "genre":
                                 genres.Add(p2.Value);
@@ -70,7 +109,7 @@ namespace A3Proj {
                         }
                         eIndex++;
                     }//foreach subelement
-                    Movie movie = new Movie(name, year, length, director, rating, genres, actors);
+                    Movie movie = new Movie(name, year, length, director, rating,userRating, review, genres, actors);
                     movieList.Add(movie);
                 }//foreach descendant
                 //Done loading movies. Do something with movielist now.

@@ -27,6 +27,8 @@
             this.ContentParentTable = new System.Windows.Forms.TableLayoutPanel();
             this.movieFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.navButtonNext = new System.Windows.Forms.Button();
             this.navButtonPrev = new System.Windows.Forms.Button();
@@ -108,12 +110,36 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(563, 39);
             this.panel2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "database",
+            "me",
+            "both"});
+            this.comboBox1.Location = new System.Drawing.Point(96, 14);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Show ratings from: ";
             // 
             // panel3
             // 
@@ -473,6 +499,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ContentParentTable.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -520,6 +547,8 @@
         private System.Windows.Forms.NumericUpDown releaseToControl;
         private System.Windows.Forms.NumericUpDown releaseFromControl;
         private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label11;
 
 
     }

@@ -20,15 +20,21 @@ namespace A3Proj.TabPanels{
         public MovieTabPanel() {
             InitializeComponent();
             shortList = new List<String>();
-            if (movieData == null) {
-                movieData = new MovieData();
-                MessageBox.Show("MovieTabPanel initialized WITHOUT reference to global MovieData object.\nCertain features will not work.");
-            }
         }
 
         public MovieTabPanel(MovieData mData) :this() {
             movieData = mData;
             performSearch();
+            comboBox1.SelectedIndex = 0;
+        }
+
+        public void updateMovie(Movie newMovie) {
+            int currentPage = Convert.ToInt32(pageSelectionBox.Text);
+            movieData.updateMovie(newMovie);
+            performSearch();
+            pageSelectionBox.Text = currentPage.ToString();
+            populateTable();
+            updateNavButtons();
         }
 
         /*
@@ -52,7 +58,7 @@ namespace A3Proj.TabPanels{
             if (currentPageNumber < moviePageList.Count) {
                 List<Movie> currentPage = moviePageList[currentPageNumber];
                 foreach (Movie movie in currentPage) {
-                    MovieBox newMovieBox = new MovieBox(movie,this);
+                    MovieBox newMovieBox = new MovieBox(movie, this, comboBox1.SelectedIndex);
                     movieFlowPanel.Controls.Add(newMovieBox);
                 }
             }
@@ -203,6 +209,10 @@ namespace A3Proj.TabPanels{
 
         private void shortlist_selIndChange(object sender, EventArgs e) {
             button_shortlistRemoveSel.Enabled = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            populateTable();
         }
 
         

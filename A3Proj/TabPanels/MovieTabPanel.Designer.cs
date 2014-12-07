@@ -27,6 +27,7 @@
             this.ContentParentTable = new System.Windows.Forms.TableLayoutPanel();
             this.movieFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox_watched = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -36,6 +37,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pageSelectionBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.certificationCheckedList = new System.Windows.Forms.CheckedListBox();
             this.fillLabel0 = new System.Windows.Forms.Label();
             this.button_shortlistRemoveSel = new System.Windows.Forms.Button();
             this.searchTextBoxDirector = new System.Windows.Forms.TextBox();
@@ -81,7 +84,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 638);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(874, 713);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // ContentParentTable
@@ -96,28 +99,42 @@
             this.ContentParentTable.RowCount = 2;
             this.ContentParentTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.26257F));
             this.ContentParentTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.73743F));
-            this.ContentParentTable.Size = new System.Drawing.Size(569, 632);
+            this.ContentParentTable.Size = new System.Drawing.Size(688, 707);
             this.ContentParentTable.TabIndex = 5;
             // 
             // movieFlowPanel
             // 
             this.movieFlowPanel.AutoScroll = true;
             this.movieFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.movieFlowPanel.Location = new System.Drawing.Point(3, 48);
+            this.movieFlowPanel.Location = new System.Drawing.Point(3, 54);
             this.movieFlowPanel.Name = "movieFlowPanel";
-            this.movieFlowPanel.Size = new System.Drawing.Size(563, 581);
+            this.movieFlowPanel.Size = new System.Drawing.Size(682, 650);
             this.movieFlowPanel.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.comboBox_watched);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(563, 39);
+            this.panel2.Size = new System.Drawing.Size(682, 45);
             this.panel2.TabIndex = 1;
+            // 
+            // comboBox_watched
+            // 
+            this.comboBox_watched.FormattingEnabled = true;
+            this.comboBox_watched.Items.AddRange(new object[] {
+            "Show watched/unwatched",
+            "Only watched",
+            "Only unwatched"});
+            this.comboBox_watched.Location = new System.Drawing.Point(232, 10);
+            this.comboBox_watched.Name = "comboBox_watched";
+            this.comboBox_watched.Size = new System.Drawing.Size(179, 21);
+            this.comboBox_watched.TabIndex = 10;
+            this.comboBox_watched.SelectedIndexChanged += new System.EventHandler(this.comboBox_watched_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -126,7 +143,7 @@
             "database",
             "me",
             "both"});
-            this.comboBox1.Location = new System.Drawing.Point(96, 14);
+            this.comboBox1.Location = new System.Drawing.Point(96, 10);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
@@ -136,7 +153,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 16);
+            this.label11.Location = new System.Drawing.Point(3, 12);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 13);
             this.label11.TabIndex = 8;
@@ -150,9 +167,9 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.pageSelectionBox);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(298, 0);
+            this.panel3.Location = new System.Drawing.Point(417, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(265, 39);
+            this.panel3.Size = new System.Drawing.Size(265, 45);
             this.panel3.TabIndex = 7;
             // 
             // navButtonNext
@@ -182,7 +199,7 @@
             // labelPageOutOf
             // 
             this.labelPageOutOf.AutoSize = true;
-            this.labelPageOutOf.Location = new System.Drawing.Point(102, 13);
+            this.labelPageOutOf.Location = new System.Drawing.Point(109, 13);
             this.labelPageOutOf.Name = "labelPageOutOf";
             this.labelPageOutOf.Size = new System.Drawing.Size(43, 13);
             this.labelPageOutOf.TabIndex = 5;
@@ -191,7 +208,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 13);
+            this.label10.Location = new System.Drawing.Point(11, 13);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 3;
@@ -199,7 +216,7 @@
             // 
             // pageSelectionBox
             // 
-            this.pageSelectionBox.Location = new System.Drawing.Point(52, 10);
+            this.pageSelectionBox.Location = new System.Drawing.Point(59, 10);
             this.pageSelectionBox.Name = "pageSelectionBox";
             this.pageSelectionBox.Size = new System.Drawing.Size(44, 20);
             this.pageSelectionBox.TabIndex = 4;
@@ -211,6 +228,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.certificationCheckedList);
             this.panel1.Controls.Add(this.fillLabel0);
             this.panel1.Controls.Add(this.button_shortlistRemoveSel);
             this.panel1.Controls.Add(this.searchTextBoxDirector);
@@ -236,13 +255,51 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 632);
+            this.panel1.Size = new System.Drawing.Size(174, 707);
             this.panel1.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(9, 435);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(90, 16);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Certification";
+            // 
+            // certificationCheckedList
+            // 
+            this.certificationCheckedList.FormattingEnabled = true;
+            this.certificationCheckedList.Items.AddRange(new object[] {
+            "Approved",
+            "Passed",
+            "Open",
+            "G",
+            "GP",
+            "PG-13",
+            "PG",
+            "R",
+            "M",
+            "X",
+            "NC-17",
+            "Unrated",
+            "Not",
+            "TV-G",
+            "TV-PG",
+            "TV-14",
+            "TV-MA"});
+            this.certificationCheckedList.Location = new System.Drawing.Point(11, 454);
+            this.certificationCheckedList.Name = "certificationCheckedList";
+            this.certificationCheckedList.ScrollAlwaysVisible = true;
+            this.certificationCheckedList.Size = new System.Drawing.Size(147, 64);
+            this.certificationCheckedList.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.certificationCheckedList, "Check off genres you would like to appear");
             // 
             // fillLabel0
             // 
             this.fillLabel0.AutoSize = true;
-            this.fillLabel0.Location = new System.Drawing.Point(1, 437);
+            this.fillLabel0.Location = new System.Drawing.Point(0, 514);
             this.fillLabel0.Name = "fillLabel0";
             this.fillLabel0.Size = new System.Drawing.Size(169, 13);
             this.fillLabel0.TabIndex = 29;
@@ -251,7 +308,7 @@
             // button_shortlistRemoveSel
             // 
             this.button_shortlistRemoveSel.Enabled = false;
-            this.button_shortlistRemoveSel.Location = new System.Drawing.Point(82, 456);
+            this.button_shortlistRemoveSel.Location = new System.Drawing.Point(81, 533);
             this.button_shortlistRemoveSel.Name = "button_shortlistRemoveSel";
             this.button_shortlistRemoveSel.Size = new System.Drawing.Size(75, 23);
             this.button_shortlistRemoveSel.TabIndex = 28;
@@ -282,7 +339,7 @@
             // 
             this.textBox_ActorQuery.Location = new System.Drawing.Point(12, 370);
             this.textBox_ActorQuery.Name = "textBox_ActorQuery";
-            this.textBox_ActorQuery.Size = new System.Drawing.Size(145, 76);
+            this.textBox_ActorQuery.Size = new System.Drawing.Size(145, 60);
             this.textBox_ActorQuery.TabIndex = 25;
             this.textBox_ActorQuery.Text = "";
             this.toolTip1.SetToolTip(this.textBox_ActorQuery, "Specify what actors are in the movie. Leave blank if you don\'t want to filter by " +
@@ -397,7 +454,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 459);
+            this.label7.Location = new System.Drawing.Point(9, 536);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 17;
@@ -407,7 +464,7 @@
             // 
             this.listBox_shortlist.AllowDrop = true;
             this.listBox_shortlist.FormattingEnabled = true;
-            this.listBox_shortlist.Location = new System.Drawing.Point(15, 483);
+            this.listBox_shortlist.Location = new System.Drawing.Point(14, 560);
             this.listBox_shortlist.Name = "listBox_shortlist";
             this.listBox_shortlist.Size = new System.Drawing.Size(144, 95);
             this.listBox_shortlist.TabIndex = 16;
@@ -510,7 +567,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MovieTabPanel";
-            this.Size = new System.Drawing.Size(755, 638);
+            this.Size = new System.Drawing.Size(874, 713);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ContentParentTable.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -564,6 +621,9 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckedListBox certificationCheckedList;
+        private System.Windows.Forms.ComboBox comboBox_watched;
 
 
     }

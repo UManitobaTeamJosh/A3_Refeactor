@@ -28,12 +28,15 @@ Movie Tab
     
     On the left is a sidebar where the user specifies the criteria of the search.
     If a control is left blank, then that criteria is not used to filter out any movies.
+    Search criteria include title name, actors, directors, genre, running time, release year, and certification.
     The sidebar also contains the shortlist, which users can drag movies onto.
     
     On the top of the movie tab are controls that futher filter out movies, and specifically
     affect how each query is shown (does not actually change the search).
     The user can for example, select how they want to see the movie ratings.
     They can choose to see either the database ratings, their own ratings, or both.
+    
+    The user can also specifcy whether or not they want to view movies they've watched, movies they haven't watched, or both.
     
     The top bar is also used to navigate through the pages either using the textbox to specify
     a page number (restricted within the pages that actually exist) or using the "previous" and "next" buttons.
@@ -94,3 +97,5 @@ It is recommended that A3Proj.exe be put in it's own directory with a "movies.xm
 If there is no "movies.xml" then there will be no database to search from and all queries will turn up empty.
 
 An exmaple of a working enviornment can be seen in the "exampleBuild" folder.
+
+If a clean movies.xml file is required, one can be found in A3Proj/movies directory

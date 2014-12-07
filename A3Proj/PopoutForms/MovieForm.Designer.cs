@@ -41,6 +41,7 @@
             this.label_date = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MoviePosterPictureBox = new System.Windows.Forms.PictureBox();
+            this.label_certification = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePosterPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             this.label_DirectorActor.AutoSize = true;
             this.label_DirectorActor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_DirectorActor.Location = new System.Drawing.Point(180, 84);
+            this.label_DirectorActor.Location = new System.Drawing.Point(180, 103);
             this.label_DirectorActor.Name = "label_DirectorActor";
             this.label_DirectorActor.Size = new System.Drawing.Size(47, 13);
             this.label_DirectorActor.TabIndex = 4;
@@ -254,11 +255,21 @@
             this.MoviePosterPictureBox.TabIndex = 0;
             this.MoviePosterPictureBox.TabStop = false;
             // 
+            // label_certification
+            // 
+            this.label_certification.AutoSize = true;
+            this.label_certification.Location = new System.Drawing.Point(181, 83);
+            this.label_certification.Name = "label_certification";
+            this.label_certification.Size = new System.Drawing.Size(114, 13);
+            this.label_certification.TabIndex = 18;
+            this.label_certification.Text = "Certification: Unknown";
+            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 664);
+            this.Controls.Add(this.label_certification);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_date);
             this.Controls.Add(this.radio_on);
@@ -306,5 +317,6 @@
         private System.Windows.Forms.RadioButton radio_on;
         private System.Windows.Forms.Label label_date;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label_certification;
     }
 }

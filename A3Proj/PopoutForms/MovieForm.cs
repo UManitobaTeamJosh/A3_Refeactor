@@ -51,6 +51,11 @@ namespace A3Proj.PopoutForms {
             }
             description += movie.getYear();
             label_basicMovieInfo.Text = description;
+            //certification
+            String certification = movie.getCertification();
+            if (!String.IsNullOrWhiteSpace(certification)) {
+                label_certification.Text = "Certification: "+certification;
+            }
             //set director and actors
             String director = movie.getDirector();
             String[] actorArray = movie.getActors().ToArray();

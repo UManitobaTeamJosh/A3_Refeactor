@@ -18,19 +18,21 @@ namespace A3Proj {
         private String title;
         private int year;
         private int length;
+        private String certification;
         private String director;
         private int rating;
         private int userRating;
         private String review;
         private String dateWatched;
+        
         private List<String> genreList;
         private List<String> actorList;
-
-        public Movie(String title, int year, int length, String director,
+        public Movie(String title, int year, int length, String certification ,String director,
             int rating,int userRating, String review,String dateWatched, List<String> genreList, List<String> actorList) {
             this.title = title;
             this.year = year;
             this.length = length;
+            this.certification = certification;
             this.director = director;
             this.rating = rating;
             this.userRating = userRating;
@@ -38,6 +40,23 @@ namespace A3Proj {
             this.dateWatched = dateWatched;
             this.genreList = genreList;
             this.actorList = actorList;
+        }
+
+        public bool meetWatchFilter(int filterState) {
+            bool output = true;
+            switch (filterState) {
+                case 1:
+                    if (String.IsNullOrWhiteSpace(dateWatched)) {
+                        output = false;
+                    }
+                    break;
+                case 2:
+                    if (String.IsNullOrWhiteSpace(dateWatched)) {
+                        output = true;
+                    }
+                    break;
+            }
+            return output;
         }
 
         /*
@@ -48,6 +67,7 @@ namespace A3Proj {
             output = genreList.Contains(genreQuery);
             return output;
         }
+
 
         /*
          *  Two movies are considered identical if they have the same title, length, and year.
@@ -111,6 +131,25 @@ namespace A3Proj {
         }
 
         /*
+         *  Return true if there there's at least one certification in certifCollection that matches
+         *  this movie's certification.
+         */
+        public bool certifMatch(ICollection<string> certifCollection) {
+            bool output = false;
+            if (certification != null) {
+                if (certifCollection.Count == 0) {
+                    return true;
+                }
+                foreach (string quertyCertificate in certifCollection) {
+                    if (certification.Equals(quertyCertificate)) {
+                        return true;
+                    }
+                }
+            }
+            return output;
+        }
+
+        /*
          *  Changes the rating of the movie. 
          *  A valid movie rating is
          *      >= 0
@@ -161,6 +200,7 @@ namespace A3Proj {
         public String getTitle() { return title; }
         public int getYear() { return year; }
         public int getLength() { return length; }
+        public String getCertification() { return certification; }
         public String getDirector() { return director; }
         public int getRating() { return rating; }
         public int getUserRating() { return userRating; }

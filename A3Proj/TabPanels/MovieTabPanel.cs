@@ -37,6 +37,7 @@ namespace A3Proj.TabPanels{
             movieData = mData;
             performSearch();
             comboBox1.SelectedIndex = 0;
+            comboBox_watched.SelectedIndex = 0;
         }
 
         /*
@@ -96,7 +97,8 @@ namespace A3Proj.TabPanels{
             int yearTo = (int)releaseToControl.Value;
             int lengthFrom = (int)lengthFromControl.Value;
             int lengthTo = (int)lengthToControl.Value;
-            moviePageList = movieData.produceQuery(MOVIE_PAGE_CAPACITY, genreCheckedList,searchQuery,actorsQuery,directorQuery, yearFrom, yearTo, lengthFrom, lengthTo);
+            int watchedFilterState = comboBox_watched.SelectedIndex;
+            moviePageList = movieData.produceQuery(watchedFilterState,MOVIE_PAGE_CAPACITY, genreCheckedList,certificationCheckedList,searchQuery,actorsQuery,directorQuery, yearFrom, yearTo, lengthFrom, lengthTo);
             pageSelectionBox.Text = "1";
             labelPageOutOf.Text = "out of " + moviePageList.Count();
             updateNavButtons();
@@ -269,6 +271,13 @@ namespace A3Proj.TabPanels{
          */
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             populateTable();
+        }
+
+        /*
+         *  Whenever the watched filter changes, update the MovieBoxes appropriately
+         */
+        private void comboBox_watched_SelectedIndexChanged(object sender, EventArgs e) {
+            performSearch();
         }
 
         

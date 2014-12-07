@@ -52,6 +52,7 @@ namespace A3Proj {
                 root.Add(new XElement("title", movie.getTitle()));
                 root.Add(new XElement("year", movie.getYear()));
                 root.Add(new XElement("length", movie.getLength()+" mins"));
+                root.Add(new XElement("certification", movie.getCertification()));
                 root.Add(new XElement("director", movie.getDirector()));
                 root.Add(new XElement("rating", movie.getRating()));
                 root.Add(new XElement("userrating", movie.getUserRating()));
@@ -83,7 +84,7 @@ namespace A3Proj {
                     String name = null;
                     int year = -1;
                     int length = -1;
-                    //certification
+                    String certification = null;
                     String director = null;
                     String review = null;
                     String dateWatched = null;
@@ -105,7 +106,7 @@ namespace A3Proj {
                                 length = parseLength(p2.Value);
                                 break;
                             case "certification":
-                                //Unused
+                                certification = p2.Value;
                                 break;
                             case "review":
                                 review = p2.Value;
@@ -131,7 +132,7 @@ namespace A3Proj {
                         }
                         eIndex++;
                     }//foreach subelement
-                    Movie movie = new Movie(name, year, length, director, rating,userRating, review,dateWatched, genres, actors);
+                    Movie movie = new Movie(name, year, length,certification, director, rating,userRating, review,dateWatched, genres, actors);
                     movieList.Add(movie);
                 }//foreach descendant
                 this.movieList = movieList;
@@ -147,7 +148,7 @@ namespace A3Proj {
          *  When those movies are found, divide them among pages set in lists so that
          *  they can be easily displayed.
          */
-        public List<List<Movie>> produceQuery(int pageTableCapacity, System.Windows.Forms.CheckedListBox genreCheckedList,  String searchQuery,String[] actorQuery ,String directorQuery, int yearFrom, int yearTo, int lengthFrom, int lengthTo) {
+        public List<List<Movie>> produceQuery(int watchFilterState,int pageTableCapacity, System.Windows.Forms.CheckedListBox genreCheckedList, System.Windows.Forms.CheckedListBox certifCheckedList, String searchQuery, String[] actorQuery, String directorQuery, int yearFrom, int yearTo, int lengthFrom, int lengthTo) {
             List<List<Movie>> pageList = new List<List<Movie>>();
             List<Movie> page = new List<Movie>();
 
@@ -156,13 +157,20 @@ namespace A3Proj {
             foreach (Object item in genreCheckedList.CheckedItems) {
                 selectedGenreList.Add(item.ToString());
             }
+            //Get the selected certifications
+            List<string> selectedCertifList = new List<string>();
+            foreach (Object item in certifCheckedList.CheckedItems) {
+                selectedCertifList.Add(item.ToString());
+            }
             //Quick 'n' dirty implementation, itereate through each movie in the database.
             foreach (Movie movie in movieList) {
                 if (movie.getYear() >= yearFrom && movie.getYear() <= yearTo
                     && movie.getLength() >= lengthFrom && movie.getLength() <= lengthTo
                     && movie.genreMatch(selectedGenreList)
+                    && movie.certifMatch(selectedCertifList)
                     && movie.containsActors(actorQuery)
-                    && movie.containsDirector(directorQuery)) {
+                    && movie.containsDirector(directorQuery)
+                    && movie.meetWatchFilter(watchFilterState)){
                     if (!String.IsNullOrWhiteSpace(searchQuery) && movie.getTitle().Contains(searchQuery)) {
                         page.Add(movie);
                     } else if (String.IsNullOrWhiteSpace(searchQuery)) {

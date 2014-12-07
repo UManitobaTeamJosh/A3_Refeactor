@@ -1,0 +1,125 @@
+<movielist>
+<movie>
+	<title>Adventures of Casanova </title>
+	<year>1948</year>
+	<length>83 min</length>
+	<certification>Approved</certification>
+	<director>Roberto Gavaldn</director>
+	<rating>1</rating>
+	<genre>Action</genre>
+	<genre>Adventure</genre>
+	<genre>History</genre>
+	<genre>Romance</genre>
+	<genre>War</genre>
+	<actor>Arturo de C  rdova</actor>
+	<actor>Lucille Bremer</actor>
+	<actor>Turhan Bey</actor>
+	<actor>John Sutton</actor>
+	<actor>George Tobias</actor>
+</movie>
+<movie>
+	<title>Amazon Quest </title>
+	<year>1954</year>
+	<length>75 min</length>
+	<director>Steve Sekely</director>
+	<rating>7</rating>
+	<genre>Action</genre>
+	<genre>Drama</genre>
+	<actor>Tom Neal</actor>
+	<actor>Carole Mathews</actor>
+	<actor>Carole Donne</actor>
+	<actor>Don Zelaya</actor>
+	<actor>Ralph Graves</actor>
+</movie>
+<movie>
+	<title>American Ninja 3: Blood Hunt </title>
+	<year>1989</year>
+	<length>89 min</length>
+	<certification>R</certification>
+	<director>Cedric Sundstrom</director>
+	<rating>7</rating>
+	<genre>Action</genre>
+	<genre>Drama</genre>
+	<actor>David Bradley</actor>
+	<actor>Steve James</actor>
+	<actor>Marjoe Gortner</actor>
+	<actor>Michele B. Chan</actor>
+	<actor>Yehuda Efroni</actor>
+</movie>
+<movie>
+	<title>Appurush&#238;do </title>
+	<year>2004</year>
+	<length>105 min</length>
+	<certification>R</certification>
+	<director>Shinji Aramaki</director>
+	<rating>0</rating>
+	<genre>Sci-Fi</genre>
+	<genre>Action</genre>
+	<genre>Animation</genre>
+	<actor>Ai Kobayashi</actor>
+	<actor>J  r  ta Kosugi</actor>
+	<actor>Yuki Matsuoka</actor>
+	<actor>Asumi Miwa</actor>
+	<actor>Akimoto Tsubasa</actor>
+</movie>
+<movie>
+	<title>Arracadas, El </title>
+	<year>1978</year>
+	<length>110 min</length>
+	<director>Alberto Mariscal</director>
+	<rating>1</rating>
+	<genre>Action</genre>
+	<genre>Adventure</genre>
+	<genre>Drama</genre>
+	<genre>Western</genre>
+	<actor>Vicente Fern  ndez</actor>
+	<actor>Fernando Almada</actor>
+	<actor>Roberto Ca  edo</actor>
+	<actor>Patricia Rivera</actor>
+	<actor>M  rio Almada</actor>
+</movie>
+<movie>
+	<title>Aussie Park Boyz </title>
+	<year>2005</year>
+	<length>103 min</length>
+	<certification>R</certification>
+	<director>Nunzio La Bianca</director>
+	<rating>2</rating>
+	<genre>Action</genre>
+	<actor>Joe Murabito</actor>
+	<actor>Vince Ferraloro</actor>
+	<actor>Renato Santoro</actor>
+	<actor>Biagio Ventrelli</actor>
+	<actor>Jeff Jakotic</actor>
+</movie>
+<movie>
+	<title>Back in Business </title>
+	<year>1997</year>
+	<length>93 min</length>
+	<certification>R</certification>
+	<director>Philippe Mora</director>
+	<rating>2</rating>
+	<genre>Action</genre>
+	<genre>Adventure</genre>
+	<actor>Brian Bosworth</actor>
+	<actor>Joe Torry</actor>
+	<actor>Dara Tomanovich</actor>
+	<actor>Alan Scarfe</actor>
+	<actor>Aubrey Beavers</actor>
+</movie>
+<movie>
+	<title>Bad Georgia Road </title>
+	<year>1980</year>
+	<length>86 min</length>
+	<certification>R</certification>
+	<director>John C. Broderick</director>
+	<rating>0</rating>
+	<genre>Action</genre>
+	<genre>Comedy</genre>
+	<actor>Royal Dano</actor>
+	<actor>Cliff Emmich</actor>
+	<actor>John Kerry</actor>
+	<actor>Tom Kibbe</actor>
+	<actor>Gary Lockwood</actor>
+</movie>
+</movielist>

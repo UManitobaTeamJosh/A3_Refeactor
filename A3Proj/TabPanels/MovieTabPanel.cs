@@ -11,6 +11,13 @@ using System.Xml.Linq;
 using System.Xml;
 
 namespace A3Proj.TabPanels{
+    /*
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
+     * The panel for the Movies tab.
+     */
     public partial class MovieTabPanel : A3Proj.TabPanels.TabPanel {
 
         private static readonly int MOVIE_PAGE_CAPACITY = 50;
@@ -32,6 +39,11 @@ namespace A3Proj.TabPanels{
             comboBox1.SelectedIndex = 0;
         }
 
+        /*
+         *  Allows a Movie to be updated. Stores the current page so that
+         *  after the update, the user is sent back to where they were before
+         *  they edited the movie.
+         */
         public void updateMovie(Movie newMovie) {
             int currentPage = Convert.ToInt32(pageSelectionBox.Text);
             movieData.updateMovie(newMovie);
@@ -49,6 +61,9 @@ namespace A3Proj.TabPanels{
             movieForm.ShowDialog();
         }
 
+        /*
+         *  Allows PopoutForms to add movies to the shortlsit.
+         */
         public void addMovieToShortlist(Movie movie) {
             pushToShortlist(movie.getTitle());
         }
@@ -82,17 +97,6 @@ namespace A3Proj.TabPanels{
             int lengthFrom = (int)lengthFromControl.Value;
             int lengthTo = (int)lengthToControl.Value;
             moviePageList = movieData.produceQuery(MOVIE_PAGE_CAPACITY, genreCheckedList,searchQuery,actorsQuery,directorQuery, yearFrom, yearTo, lengthFrom, lengthTo);
-            /*
-            Console.WriteLine("QUERY <"+searchQuery+">");
-            Console.WriteLine("YEAR FROM: "+yearFrom+"\tYEAR TO: "+yearTo);
-            Console.WriteLine("LENG FROM: " + lengthFrom + "\tLENG TO: " + lengthTo);
-            Console.WriteLine("SEARCH RESULTS -------------------");
-            foreach(List<Movie> page in moviePageList){
-                foreach (Movie movie in page) {
-                    Console.WriteLine(movie.toString());
-                }
-            }
-            */
             pageSelectionBox.Text = "1";
             labelPageOutOf.Text = "out of " + moviePageList.Count();
             updateNavButtons();
@@ -125,6 +129,9 @@ namespace A3Proj.TabPanels{
             saveShortList();
         }
 
+        /*
+         *  Loads the shortList from an XML file.
+         */
         private void loadShortList() {
             if (System.IO.File.Exists(SHORTLIST_FILE)) {
                 XDocument xmlSource = XDocument.Load(SHORTLIST_FILE);
@@ -140,6 +147,9 @@ namespace A3Proj.TabPanels{
             }
         }
 
+        /*
+         *  Saves the shortList to an XML file.
+         */
         private void saveShortList() {
             XDocument xdoc = new XDocument(new XElement("movieList"));
             foreach (String movieTitle in shortList) {
@@ -214,6 +224,9 @@ namespace A3Proj.TabPanels{
             performSearch();
         }
 
+        /*
+         *  For dragging movies onto the shortList.
+         */
         private void shortlist_dragEnter(object sender, DragEventArgs e) {
             if (e.Data.GetDataPresent(DataFormats.StringFormat)) {
                 e.Effect = DragDropEffects.Copy;
@@ -222,11 +235,17 @@ namespace A3Proj.TabPanels{
             }
         }
 
+        /*
+         *  For dragging movies onto the shortList
+         */
         private void shortlist_dragDrop(object sender, DragEventArgs e) {
             String newTitle = e.Data.GetData(DataFormats.StringFormat).ToString();
             pushToShortlist(newTitle);
         }
 
+        /*
+         *  Removes the item at the selectedIndex from the shortList
+         */
         private void button_shortlistRemoveSel_Click(object sender, EventArgs e) {
             int selIndex = listBox_shortlist.SelectedIndex;
             if (selIndex > -1) {
@@ -237,10 +256,17 @@ namespace A3Proj.TabPanels{
             button_shortlistRemoveSel.Enabled = false;
         }
 
+        /*
+         *  When an item is selected, indicate to the user it can be deleted by enabling the
+         *  remove button.
+         */
         private void shortlist_selIndChange(object sender, EventArgs e) {
             button_shortlistRemoveSel.Enabled = true;
         }
 
+        /*
+         *  Whenever the Ratings mode combobox changes, update the MovieBoxes appropriately
+         */
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             populateTable();
         }

@@ -43,11 +43,11 @@
             // 
             // labelMovieTitle
             // 
-            this.labelMovieTitle.AutoSize = true;
+            this.labelMovieTitle.AutoEllipsis = true;
             this.labelMovieTitle.Location = new System.Drawing.Point(2, 166);
             this.labelMovieTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMovieTitle.Name = "labelMovieTitle";
-            this.labelMovieTitle.Size = new System.Drawing.Size(27, 13);
+            this.labelMovieTitle.Size = new System.Drawing.Size(139, 17);
             this.labelMovieTitle.TabIndex = 0;
             this.labelMovieTitle.Text = "Title";
             // 
@@ -179,7 +179,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MovieBox";
             this.Size = new System.Drawing.Size(143, 228);
-            this.Load += new System.EventHandler(this.MovieBox_Load);
             this.Click += new System.EventHandler(this.click);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.dradDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);

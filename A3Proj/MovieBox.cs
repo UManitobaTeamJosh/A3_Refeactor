@@ -10,17 +10,19 @@ using System.Windows.Forms;
 
 namespace A3Proj {
     /*
-     * TODO Use auto ellipsize instead of manual code
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
+     * MovieBox is a control used to represent movies in MovieTabPanel.
+     * It shows the movie's title, rating (depending on the settings the user has chosen in MovieTabPanel),
+     * length, and whether or not the user has watched it.
      */
     public partial class MovieBox : UserControl {
-
-        private static readonly int ELLIPSIZE_LIMIT = 22;
 
         private Movie movie;
         private A3Proj.TabPanels.MovieTabPanel parent;
         private int ratingDisplayMode = 0;
-
-        
 
         public MovieBox() {
             InitializeComponent();
@@ -58,6 +60,21 @@ namespace A3Proj {
             }
         }
 
+        /*
+         *  Renders the stars that represent the movie's rating.
+         *  
+         *  The variable ratingDisplayMode to determine how and what ratings are shown.
+         *      0 = Database Rating (The rating found in the original database)
+         *      1 = User Rating
+         *      2 = Both
+         *      
+         *  In that case that both ratings are displayed, the MovieBox expands downards
+         *  and reveals a second set of star labels to show the user rating underneath
+         *  the database rating.
+         *  
+         *  If only one (mode 0 or mode 1) rating is being displayed then the topmost
+         *  rating bar is used.
+         */
         private void setRatings() {
             Label someRating = label_rating;
             someRating.Text = "";
@@ -112,6 +129,11 @@ namespace A3Proj {
             }
         }
 
+
+        /*
+         *  Checks whether or not the movie has been watched and
+         *  if so makes the "Watched" label visible.
+         */
         private void setWatched() {
             String date = movie.getDateWatched();
             if (!String.IsNullOrWhiteSpace(date)) {
@@ -125,29 +147,29 @@ namespace A3Proj {
          *  with a "..." representing the missing characters.
          */
         private void setTitle(string title) {
-            if (title.Length > ELLIPSIZE_LIMIT) {
-                title = title.Substring(0,ELLIPSIZE_LIMIT-1);
-                title += "...";
-            }
             this.labelMovieTitle.Text = title;
         }
 
-        private void option1ToolStripMenuItem_Click(object sender, EventArgs e) {
-
-        }
-
-        private void MovieBox_Load(object sender, EventArgs e) {
-
-        }
-
+        /*
+         * Clicking this MovieBox opens a corresponding MovieForm
+         */
         private void click(object sender, EventArgs e) {
             parent.openMovieForm(movie);
         }
 
+        /*
+         *  Allows the movie's title information to be dragged to the ShortList
+         */
         private void dragStart(object sender, MouseEventArgs e) {
             this.DoDragDrop(movie.getTitle(), DragDropEffects.Copy | DragDropEffects.Move);
         }
 
+        /*
+         * Enabling drag features seemed to conflict with mouse click.
+         * Almost equivilantly from the user perspective though, a click results in a 
+         * drag-and-immediate-drop. So if the user clicks or releases their mouse on
+         * a MovieBox, that will open the MovieBox the cursor was released over.
+         */
         private void dradDrop(object sender, DragEventArgs e) {
             parent.openMovieForm(movie);
         }

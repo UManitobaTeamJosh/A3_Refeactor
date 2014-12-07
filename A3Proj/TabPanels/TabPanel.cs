@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace A3Proj.TabPanels {
     /*
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
      *  Parent class for all tab panels.
      *  Currently used to allow child forms to inherit a tooltip.
      *  

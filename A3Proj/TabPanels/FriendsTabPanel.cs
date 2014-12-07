@@ -11,9 +11,12 @@ using System.Xml.Linq;
 using System.Xml;
 
 /*
- *  The "Friends" tab panel.
- *  All saving and loading; all processing of friends is handled here.
- */
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
+     * User control for the Friends tab.
+     */
 namespace A3Proj.TabPanels {
     public partial class FriendsTabPanel : TabPanel {
 
@@ -236,6 +239,9 @@ namespace A3Proj.TabPanels {
             friendForm.ShowDialog();
         }
 
+        /*
+         *  Allows user to right click selected elements in the party to remove them.
+         */
         private void removeFromPartyToolStripMenuItem_Click(object sender, EventArgs e) {
             if (listBox_party.SelectedIndex >= 0 && listBox_party.SelectedIndex < listBox_party.Items.Count) {
                 party.RemoveAt(listBox_party.SelectedIndex);

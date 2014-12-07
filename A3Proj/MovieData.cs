@@ -8,6 +8,10 @@ using System.Xml;
 
 namespace A3Proj {
     /*
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
      *  MovieData represents a body of movies. It's used to load, save, and access the
      *  movies stored in the XML database.
      */
@@ -21,6 +25,13 @@ namespace A3Proj {
             loadXML();
         }
 
+        /*
+         *  Updates a Movie with another Movie.
+         *  
+         * Search through the database for an "equivilant" movie.
+         * When one is found, replace that movie with the new one.
+         * Save the file after this.
+         */
         public void updateMovie(Movie newMovie) {
             for (int i = 0; i < movieList.Count; i++) {
                 if (newMovie.equals(movieList[i])) {
@@ -31,6 +42,9 @@ namespace A3Proj {
             saveXML();
         }
 
+        /*
+         *  Saves the movie data to the XML file specefied by FILE_NAME.
+         */
         private void saveXML() {
             XDocument xdoc = new XDocument(new XElement("movieList"));
             foreach (Movie movie in movieList) {
@@ -55,6 +69,9 @@ namespace A3Proj {
         }
 
 
+        /*
+         * Loads the contents of FILE_NAME into this MovieData.
+         */
         private void loadXML() {
             if (System.IO.File.Exists(FILE_NAME)) {
                 XDocument xmlSource = XDocument.Load(FILE_NAME);
@@ -117,20 +134,19 @@ namespace A3Proj {
                     Movie movie = new Movie(name, year, length, director, rating,userRating, review,dateWatched, genres, actors);
                     movieList.Add(movie);
                 }//foreach descendant
-                //Done loading movies. Do something with movielist now.
-                /*
-                foreach (Movie movie in movieList) {
-                    Console.WriteLine(movie.toString());
-                }
-                */
                 this.movieList = movieList;
             } else {
                 //MessageBox.Show("xmlSource.xml not found. No data loaded.");
             }
-            //Do something with data, like populate a table
         }
 
-        //Produces a list of pages. 
+        /*
+         *  Using the given arguments, search through the database for movies that match
+         *  the search criteria.
+         *  
+         *  When those movies are found, divide them among pages set in lists so that
+         *  they can be easily displayed.
+         */
         public List<List<Movie>> produceQuery(int pageTableCapacity, System.Windows.Forms.CheckedListBox genreCheckedList,  String searchQuery,String[] actorQuery ,String directorQuery, int yearFrom, int yearTo, int lengthFrom, int lengthTo) {
             List<List<Movie>> pageList = new List<List<Movie>>();
             List<Movie> page = new List<Movie>();
@@ -140,12 +156,6 @@ namespace A3Proj {
             foreach (Object item in genreCheckedList.CheckedItems) {
                 selectedGenreList.Add(item.ToString());
             }
-            /*
-            Console.WriteLine("--Genres Selected--");
-            foreach (string word in selectedGenreList) {
-                Console.WriteLine(word);
-            }
-            */
             //Quick 'n' dirty implementation, itereate through each movie in the database.
             foreach (Movie movie in movieList) {
                 if (movie.getYear() >= yearFrom && movie.getYear() <= yearTo
@@ -167,8 +177,13 @@ namespace A3Proj {
             }
             pageList.Add(page);
             return pageList;
-        }
+        }//produceQuery
 
+        /*
+         *  Compatability for unformatted databases (still have min specified in length attribute)
+         *  
+         *  Takes a string like "84 min" and extracts the 84 from it.
+         */
         private int parseLength(string input) {
             int length = -1;
             string[] token = input.Split(null);

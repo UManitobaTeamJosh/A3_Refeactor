@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<friendList>
+  <friend>
+    <name>Freddie</name>
+    <imagePath>C:\Users\Joshua\Documents\GitHub\A3_Refeactor\A3Proj\assets\sdf.bmp</imagePath>
+    <genre>Action</genre>
+    <genre>Horror</genre>
+    <genre>Mystery</genre>
+    <movieTitle>A Nightmare On Elm Street</movieTitle>
+    <movieTitle>A Night at the Opera</movieTitle>
+  </friend>
+  <friend>
+    <name>Arnold</name>
+    <imagePath></imagePath>
+    <genre>Action</genre>
+    <genre>Sci-Fi</genre>
+    <genre>War</genre>
+    <movieTitle>Predator</movieTitle>
+    <movieTitle>Total Recall</movieTitle>
+    <movieTitle>Conan the Barbarian</movieTitle>
+  </friend>
+  <friend>
+    <name>Julie</name>
+    <imagePath></imagePath>
+    <genre>Drama</genre>
+    <genre>Romance</genre>
+  </friend>
+  <friend>
+    <name>Steven</name>
+    <imagePath></imagePath>
+    <genre>Biography</genre>
+    <genre>Documentary</genre>
+    <genre>History</genre>
+  </friend>
+  <friend>
+    <name>Jade</name>
+    <imagePath></imagePath>
+    <genre>Action</genre>
+    <genre>Drama</genre>
+    <genre>Sci-Fi</genre>
+  </friend>
+  <friend>
+    <name>George</name>
+    <imagePath></imagePath>
+    <genre>Romance</genre>
+    <genre>Sci-Fi</genre>
+    <movieTitle>Star Trek: The Motion Picture</movieTitle>
+  </friend>
+</friendList>

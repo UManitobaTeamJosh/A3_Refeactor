@@ -5,6 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace A3Proj {
+    /*
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
+     * Friend represents a friend.
+     */
     public class Friend {
 
         public String name;

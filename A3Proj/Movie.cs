@@ -5,6 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace A3Proj {
+
+    /*
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
+     * Movie represents a movie.
+     */
     public class Movie {
 
         private String title;
@@ -32,6 +40,9 @@ namespace A3Proj {
             this.actorList = actorList;
         }
 
+        /*
+         *  Checks to see if this movie is represented by a particular genre.
+         */
         public bool containsGenre(String genreQuery) {
             bool output = false;
             output = genreList.Contains(genreQuery);
@@ -135,10 +146,12 @@ namespace A3Proj {
             return output;
         }
 
+        //Mutator for review
         public void setReview(String review) {
             this.review = review;
         }
 
+        //Mutator for dateWatched
         public void setDateWatched(String date) {
             this.dateWatched = date;
         }

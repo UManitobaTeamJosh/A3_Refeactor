@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*
- *  
- */
-
 namespace A3Proj {
+    /*
+     * COMP 3020 Assignment 3
+     * Joshua Chan 7722727
+     * Josh Lemer 7634755
+     * 
+     * The main body of the program.
+     * The program's MovieData is stored here.
+     */
     public partial class MainForm : Form {
 
         private static readonly int tabScalePadding = 19;
@@ -27,8 +31,6 @@ namespace A3Proj {
             int numTabs = tabControlMain.TabPages.Count;
             tabControlMain.ItemSize = new Size((this.Size.Width - 19) / numTabs, height);
             //Data
-            
-            
         }
 
         /*

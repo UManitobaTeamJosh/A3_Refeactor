@@ -51,8 +51,8 @@ namespace A3Proj {
                     }
                     break;
                 case 2:
-                    if (String.IsNullOrWhiteSpace(dateWatched)) {
-                        output = true;
+                    if (!String.IsNullOrWhiteSpace(dateWatched)) {
+                        output = false;
                     }
                     break;
             }
